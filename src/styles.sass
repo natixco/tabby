@@ -1,0 +1,200 @@
+@font-face
+  font-family: 'Avenir'
+  src: url('./assets/font/AvenirLTStd-Book.otf') format('opentype')
+
+@font-face
+  font-family: 'Avenir-Bold'
+  src: url('./assets/font/AvenirNextLTPro-Bold.otf') format('opentype')
+
+@function color($color-name)
+  @return var(--color-#{$color-name})
+
+:root
+  --color-bg-one: #FFF
+  --color-bg-two: #f9f9f9
+  --color-text-one: 56, 62, 83, 1
+  --color-text-two: 114, 123, 150, 1
+  // --color-text-one: #383E53
+  // --color-text-two: #727B96
+  --color-accent: #0366FC
+  --color-accent-rgb: 3,102,252
+  // --color-accent: #383ECB
+  // --color-accent-rgb: 56,62,203
+
+*
+  margin: 0
+  padding: 0
+  font-family: 'Avenir'
+  user-select: none
+
+body
+  background: color(bg-one)
+  // overflow-x: hidden
+
+
+
+.header
+  position: relative
+  width: calc(100vw - 250px)
+  height: 120px
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: space-between
+
+  .text
+    margin-left: 50px
+
+  .title
+    font-family: 'Avenir-Bold'
+    font-size: 30px
+    color: rgba(color(text-one))
+    margin-bottom: 5px
+
+  .subtitle
+    font-weight: 400
+    font-size: 16px
+    color: rgba(color(text-two))
+
+  button
+    margin-right: 50px
+
+select
+  width: calc(250px - 15px)
+  height: 45px
+  border-radius: 4px
+  border: 1px solid rgba(0,0,0,.1)
+  outline: 0
+  background: white
+  font-size: 16px
+  color: color(text-two)
+  padding-left: 15px
+  cursor: pointer
+  transition: all .2s ease
+  &:hover
+    border-color: rgba(0,0,0,.2)
+  &:focus
+    border-color: color(accent)
+
+.checkbox
+  position: relative
+  width: 30px
+  height: 30px
+  border-radius: 4px
+  border: 1px solid rgba(0,0,0,.1)
+
+  input
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 999
+    opacity: 0
+    cursor: pointer
+    &:checked ~ .custom-checkbox
+      background: color(accent)
+
+      i
+        opacity: 1
+
+  .custom-checkbox
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: transparent
+    border-radius: 4px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+    i
+      opacity: 0
+      font-size: 18px
+      color: white
+
+
+
+.btn
+  height: 45px
+  line-height: 45px
+  padding: 0 30px
+  border-radius: 4px
+  cursor: pointer
+  font-size: 16px
+  font-weight: 400
+  background: transparent
+  text-align: center
+  overflow: hidden
+  transition: all .2s ease
+  text-decoration: none
+  display: block
+  outline: none
+  border: none
+
+//----------------------------------------- PRIMARY
+.btn-primary--accent
+  color: white
+  background: color(accent)
+  &:hover, &:focus
+    background: color(accent)
+
+.btn-disabled
+  background: color(accent)
+  cursor: not-allowed
+  &:hover, &:focus
+    background: color(accent)
+
+
+.input-container
+  width: auto
+  height: auto
+  display: flex
+  flex-direction: column
+  &:focus-within
+    label
+      color: color(accent)
+
+  input, select
+    color: rgba(color(text-one))
+    border-radius: 4px
+    width: 335px
+    height: 45px
+    margin-bottom: 25px
+    padding-left: 15px
+    font-weight: 400
+    font-size: 16px
+    background: white !important
+    border: 1px solid rgba(0,0,0,.1)
+    transition: all .4s ease
+    outline: 0
+    &:hover
+      border-color: rgba(0,0,0,.2)
+    &:focus
+      border-color: color(accent)
+    &:focus ~ label
+      color: color(accent)
+
+  input[type="time"]
+    text-align: right
+
+  select
+    cursor: pointer
+    width: 350px
+
+  label
+    pointer-events: none
+    transition: all .4s ease
+    position: relative
+    // margin-left: 15px
+    margin-right: 15px
+    font-size: 15px
+    margin-bottom: 10px
+    display: inline-block
+    color: rgba(color(text-one))
+
+  .input-invalid
+    color: red

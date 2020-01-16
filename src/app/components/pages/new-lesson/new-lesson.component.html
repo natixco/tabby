@@ -1,0 +1,84 @@
+<div class="header">
+  <div class="text">
+    <h1 class="title" translate>TITLE.newLesson</h1>
+    <h2 class="subtitle">Lorem ipsum dolor sit amet.</h2>
+  </div>
+</div>
+<div class="container">
+  <form [formGroup]="lessonForm">
+    <ul>
+      <li>
+        <div class="input-container">
+          <label for="start_time" [ngClass]="{'input-invalid': form.start_time.touched && form.start_time.errors}">
+            <span *ngIf="!form.start_time.touched || !form.start_time.errors" translate>NEWLESSON.NORMAL.start_time</span>
+            <span *ngIf="form.start_time.touched && form.start_time.errors">
+              <span *ngIf="form.start_time.errors.required" translate>NEWLESSON.ERROR.start_time</span>
+            </span>
+          </label>
+          <input type="time" name="start_time" formControlName="start_time">
+        </div>
+        <div class="input-container">
+          <label for="finish_time" [ngClass]="{'input-invalid': form.finish_time.touched && form.finish_time.errors}">
+            <span *ngIf="!form.finish_time.touched || !form.finish_time.errors" translate>NEWLESSON.NORMAL.finish_time</span>
+            <span *ngIf="form.finish_time.touched && form.finish_time.errors">
+              <span *ngIf="form.finish_time.errors.required" translate>NEWLESSON.ERROR.finish_time</span>
+            </span>
+          </label>
+          <input type="time" name="finish_time" formControlName="finish_time">
+        </div>
+      </li>
+      <li>
+        <div class="input-container">
+          <label for="lesson_name" [ngClass]="{'input-invalid': form.lesson_name.touched && form.lesson_name.errors}">
+            <span *ngIf="!form.lesson_name.touched || !form.lesson_name.errors" translate>NEWLESSON.NORMAL.lesson_name</span>
+            <span *ngIf="form.lesson_name.touched && form.lesson_name.errors">
+              <span *ngIf="form.lesson_name.errors.required" translate>NEWLESSON.ERROR.lesson_name</span>
+            </span>
+          </label>
+          <input type="text" name="lesson_name" formControlName="lesson_name">
+        </div>
+        <div class="input-container">
+          <label for="class_room" translate>NEWLESSON.NORMAL.class_room</label>
+          <input type="text" formControlName="class_room">
+        </div>
+      </li>
+      <li>
+        <div class="input-container">
+          <label for="week" [ngClass]="{'input-invalid': form.week.touched && form.week.errors}">
+            <span *ngIf="!form.week.touched || !form.week.errors" translate>NEWLESSON.NORMAL.week</span>
+            <span *ngIf="form.week.touched && form.week.errors">
+              <span *ngIf="form.week.errors.required" translate>NEWLESSON.ERROR.week</span>
+            </span>
+          </label>
+          <select name="week" formControlName="week">
+            <option *ngFor="let item of weeks" [value]="item">{{item}}</option>
+          </select>
+        </div>
+        <div class="input-container">
+          <label for="teacher_name" translate>NEWLESSON.NORMAL.teacher_name</label>
+          <input type="text" formControlName="teacher_name">
+        </div>
+      </li>
+      <li>
+        <div class="input-container">
+          <label for="day" [ngClass]="{'input-invalid': form.day.touched && form.day.errors}">
+            <span *ngIf="!form.day.touched || !form.day.errors" translate>NEWLESSON.NORMAL.day</span>
+            <span *ngIf="form.day.touched && form.day.errors">
+              <span *ngIf="form.day.errors.required" translate>NEWLESSON.ERROR.day</span>
+            </span>
+          </label>
+          <select name="day" formControlName="day">
+            <option value="monday" translate>DAYS.monday</option>
+            <option value="tuesday" translate>DAYS.tuesday</option>
+            <option value="wednesday" translate>DAYS.wednesday</option>
+            <option value="thursday" translate>DAYS.thursday</option>
+            <option value="friday" translate>DAYS.friday</option>
+            <option value="saturday" translate>DAYS.saturday</option>
+            <option value="sunday" translate>DAYS.sunday</option>
+          </select>
+        </div>
+      </li>
+    </ul>
+    <button class="btn btn-primary--accent" (click)="saveLesson()" [disabled]="form.invalid" [ngClass]="{'btn-disabled': form.invalid}">Save and add lesson</button>
+  </form>
+</div>

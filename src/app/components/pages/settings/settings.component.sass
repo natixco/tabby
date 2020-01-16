@@ -1,0 +1,85 @@
+@import '../../../../assets/_import.sass'
+
+.container
+  position: absolute
+  margin-top: 30px
+  width: calc(100vw - 250px - 100px)
+  left: 50px
+
+  ul li
+    position: relative
+    list-style: none
+    width: 100%
+    margin-bottom: 40px
+    padding-bottom: 20px
+    border-bottom: 1px solid rgba(0,0,0,.1)
+
+    .title
+      font-size: 22px
+      font-weight: 700
+      color: rgba(color(text-one))
+      margin-bottom: 20px
+
+    .subtitle
+      font-size: 16px
+      font-family: 'Avenir'
+      font-weight: 400
+      color: rgba(color(text-two))
+      // margin-top: -15px
+
+    .theme-container
+      display: flex
+      flex-direction: column
+
+      .theme-inner-container
+        display: flex
+        flex-direction: row
+        align-items: center
+        padding: 15px 0
+
+        p
+          font-size: 16px
+          color: rgba(color(text-one))
+          margin-right: 20px
+
+        .color-container
+          // display: flex
+          // flex-direction: row
+
+          li
+            position: relative
+            float: left
+            width: 35px
+            height: 35px
+            padding: 0
+            margin: 0
+            margin-right: 10px
+            border-radius: 50%
+            cursor: pointer
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+
+            i
+              font-size: 16px
+              color: white
+
+  .link
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    cursor: pointer
+    outline: 0
+    &:hover
+      .icon i, .title
+        color: color(accent)
+
+    .icon
+      width: 60px
+      height: 100%
+
+      i
+        font-size: 34px
+        color: rgba(color(text-one))

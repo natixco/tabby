@@ -1,0 +1,26 @@
+<div class="header">
+  <div class="text">
+    <h1 class="title" translate>TITLE.timetable</h1>
+    <h2 class="subtitle" translate>SUBTITLE.timetable</h2>
+  </div>
+  <button class="btn btn-primary--accent" routerLink="/new-lesson">Add new lesson</button>
+</div>
+<div class="timetable-container">
+  <p *ngIf="!isDataLoaded">loading</p>
+  <div class="timetable-inner-container" *ngIf="isDataLoaded">
+    <div class="timetable-week">
+      <div class="timetable-day" *ngFor="let day of objKeys(_DataService.data['weeks'][currentWeek])">
+        <h1 class="timetable-title">{{getTranslatedDay(day)}}</h1>
+        <div class="timetable-lesson" *ngFor="let lesson of getValues(currentWeek, day)">
+          <p class="timetable-lesson-name">{{lesson['lesson_name']}}</p>
+          <p class="timetable-time">{{lesson['start_time']}} - {{lesson['finish_time']}}</p>
+
+          <p class="timetable-info" *ngIf="lesson['class_room'].length !== 0 && lesson['teacher_name'].length === 0"><span>{{lesson['class_room']}}</span></p>
+          <p class="timetable-info" *ngIf="lesson['class_room'].length === 0 && lesson['teacher_name'].length !== 0">{{lesson['teacher_name']}}</p>
+          <p class="timetable-info" *ngIf="lesson['class_room'].length !== 0 && lesson['teacher_name'].length !== 0"><span>{{lesson['class_room']}}</span>, {{lesson['teacher_name']}}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

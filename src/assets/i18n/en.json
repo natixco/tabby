@@ -1,0 +1,46 @@
+{
+  "TITLE": {
+    "timetable": "Timetable",
+    "homeworks": "Homeworks",
+    "settings": "Settings",
+    "newLesson": "Add new lesson"
+  },
+  "SUBTITLE": {
+    "timetable": "Here you can see your weekly schedule."
+  },
+  "SETTINGS": {
+    "language": "Language",
+    "THEME": {
+      "theme": "Theme",
+      "darkMode": "Dark mode",
+      "mainColor": "Main color"
+    }
+  },
+  "NEWLESSON": {
+    "NORMAL": {
+      "start_time": "Start time",
+      "finish_time": "Finish time",
+      "lesson_name": "Lesson name",
+      "teacher_name": "Teacher name",
+      "class_room": "Class room",
+      "week": "Week",
+      "day": "Day"
+    },
+    "ERROR": {
+      "start_time": "Start time is required.",
+      "finish_time": "Finish time is required.",
+      "lesson_name": "Lesson name is required.",
+      "week": "Week is required.",
+      "day": "Day is required."
+    }
+  },
+  "DAYS": {
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday"
+  }
+}

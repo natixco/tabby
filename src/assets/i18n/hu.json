@@ -1,0 +1,46 @@
+{
+  "TITLE": {
+    "timetable": "Órarend",
+    "homeworks": "Házi feladatok",
+    "settings": "Beállítások",
+    "newLesson": "Új óra hozzáadása"
+  },
+  "SUBTITLE": {
+    "timetable": "Itt láthatod a heti óráidat."
+  },
+  "SETTINGS": {
+    "language": "Nyelv",
+    "THEME": {
+      "theme": "Téma",
+      "darkMode": "Sötét mód",
+      "mainColor": "Szín"
+    }
+  },
+  "NEWLESSON": {
+    "NORMAL": {
+      "start_time": "Óra kezdési ideje",
+      "finish_time": "Óra befejezési ideje",
+      "lesson_name": "Tantárgy",
+      "teacher_name": "Tanár neve",
+      "class_room": "Osztályterem",
+      "week": "Hét",
+      "day": "Nap"
+    },
+    "ERROR": {
+      "start_time": "A kezdési idő megadása kötelező.",
+      "finish_time": "A befejezési idő megadása kötelező.",
+      "lesson_name": "Az osztályterem megadása kötelező.",
+      "week": "A hét megadása kötelező.",
+      "day": "A nap megadása kötelező."
+    }
+  },
+  "DAYS": {
+    "monday": "Hétfő",
+    "tuesday": "Kedd",
+    "wednesday": "Szerda",
+    "thursday": "Csütörtök",
+    "friday": "Péntek",
+    "saturday": "Szombat",
+    "sunday": "Vasárnap"
+  }
+}

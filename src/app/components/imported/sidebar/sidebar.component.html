@@ -1,0 +1,35 @@
+<div class="sidebar">
+  <ul class="menu">
+    <div class="bar" [style.opacity]="(_Router.url === '/' || _Router.url === '/timetable' || _Router.url === '/homeworks' || _Router.url === '/settings') ? '1' : '0'"></div>
+    <li routerLink="/timetable" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+      <div class="icon">
+        <i class="eva eva-clock-outline" *ngIf="_Router.url !== '/timetable'"></i>
+        <i class="eva eva-clock" *ngIf="_Router.url === '/timetable'"></i>
+      </div>
+      <p translate>TITLE.timetable</p>
+    </li>
+    <li routerLink="/homeworks" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+      <div class="icon">
+        <i class="eva eva-checkmark-circle-2-outline" *ngIf="_Router.url !== '/homeworks'"></i>
+        <i class="eva eva-checkmark-circle-2" *ngIf="_Router.url === '/homeworks'"></i>
+      </div>
+      <p translate>TITLE.homeworks</p>
+    </li>
+    <!-- <li routerLink="/activities" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+      <i class="eva eva-time"></i>
+      <p>Activities</p>
+    </li> -->
+    <li routerLink="/settings" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: false}">
+      <div class="icon">
+        <i class="eva eva-settings-outline" *ngIf="!_Router.url.startsWith('/settings')"></i>
+        <i class="eva eva-settings" *ngIf="_Router.url.startsWith('/settings')"></i>
+      </div>
+      <p translate>TITLE.settings</p>
+    </li>
+  </ul>
+  <div class="sidebartoggle-button">
+    <div class="icon">
+
+    </div>
+  </div>
+</div>

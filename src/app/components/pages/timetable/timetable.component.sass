@@ -1,0 +1,84 @@
+@import '../../../../assets/_import.sass'
+
+.grabbing-timetable-container
+  cursor: grabbing !important
+
+.timetable-container
+  position: absolute
+  margin-top: 30px
+  width: calc(100vw - 250px)
+  height: calc(100vh - 120px - 30px)
+  overflow: scroll
+  cursor: grab
+
+  .timetable-inner-container
+    position: absolute
+    top: 0
+    left: 0
+    width: auto
+    height: auto
+
+    .timetable-week
+      position: absolute
+      top: 0
+      left: 50px
+      width: auto
+      height: auto
+      display: flex
+      flex-direction: row
+
+      .timetable-day
+        width: 280px
+        height: auto
+        margin-right: 30px
+
+        .timetable-title
+          font-size: 16px
+          font-weight: 400
+          text-transform: uppercase
+          color: rgba(color(text-two))
+          margin-bottom: 30px
+
+        .timetable-lesson
+          position: relative
+          width: 100%
+          height: 140px
+          margin-bottom: 15px
+          // box-shadow: 0 4px 8px rgba(0,0,0,.05)
+          box-shadow: 0 4px 8px rgba(#727B96, .1)
+          border-radius: 5px
+          z-index: 99
+          background: color(bg-one)
+          display: flex
+          flex-direction: column
+          transition: all .4s ease
+
+          .timetable-lesson-name
+            padding-top: 15px
+            padding-left: 15px
+            font-size: 20px
+            font-weight: 700
+            color: color(accent)
+
+          .timetable-time
+            padding-top: 5px
+            padding-left: 15px
+            font-size: 16px
+            font-weight: 400
+            color: rgba(color(text-two))
+
+          .timetable-info
+            position: absolute
+            left: 15px
+            bottom: 15px
+            font-size: 16px
+            font-weight: 400
+            color: rgba(color(text-two))
+            max-width: 260px
+            overflow: hidden
+            white-space: nowrap
+            display: inline-block
+            text-overflow: ellipsis
+
+            span
+              font-weight: 700
