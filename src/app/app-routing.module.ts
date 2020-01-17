@@ -4,6 +4,7 @@ import { TimetableComponent } from './components/pages/timetable/timetable.compo
 import { SettingsComponent } from './components/pages/settings/settings.component';
 import { HomeworksComponent } from './components/pages/homeworks/homeworks.component';
 import { NewLessonComponent } from './components/pages/new-lesson/new-lesson.component';
+import { EditLessonComponent } from './components/pages/edit-lesson/edit-lesson.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
     path: 'new-lesson',
     component: NewLessonComponent
     // loadChildren: '../app/components/pages/new-lesson/new-lesson.module#NewLessonModule'
+  },
+  {
+    path: 'edit-lesson',
+    component: EditLessonComponent
   }
 ];
 

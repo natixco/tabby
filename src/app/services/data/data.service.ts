@@ -15,6 +15,9 @@ export class DataService {
   data: object;
   _data: BehaviorSubject<object> = new BehaviorSubject<object>({});
 
+  currentLesson: object;
+  _currentLesson: BehaviorSubject<object> = new BehaviorSubject<object>({});
+
   // user settings
   _accentColor: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
@@ -61,6 +64,10 @@ export class DataService {
 
     this._data.subscribe((res: object) => {
       this.data = res;
+    });
+
+    this._currentLesson.subscribe((res: object) => {
+      this.currentLesson = res;
     });
   }
 
@@ -114,7 +121,6 @@ export class DataService {
     let newData: object = this.data;
     newData[property] = value;
     this._data.next(newData);
-    console.log(this.data)
     this.writeData();
   }
 
@@ -145,7 +151,7 @@ export class DataService {
     // add lesson to day
     let tmp = newData['weeks'][lesson['week']][lesson['day']];
     tmp.push(newLesson);
-    newData['weeks'][lesson['week']][lesson['day']] = tmp;
+    // newData['weeks'][lesson['week']][lesson['day']] = tmp;
 
     // sort day by lesson start times
     newData['weeks'][lesson['week']][lesson['day']].sort( (a: object, b: object) => {
@@ -185,10 +191,12 @@ export class DataService {
       }
     });
 
+    // check if original day's length is 0, if true delete it
     if(Object.values(newData['weeks'][week][day]).length === 0) {
       delete newData['weeks'][week][day];
     }
 
+    // check if original week's length is 0, if true delete it
     if(Object.keys(newData['weeks'][week]).length === 0) {
       delete newData['weeks'][week];
       this._currentWeek.next(Object.keys(newData['weeks'])[0]);
@@ -196,5 +204,44 @@ export class DataService {
 
     this._data.next(newData);
     this.writeData();
+  }
+
+  editLesson(originalLesson: object, modifiedLesson: object) {
+    let newData: object = this.data;
+    let tempLesson: object = JSON.parse(JSON.stringify(originalLesson['lesson']));
+    delete tempLesson['week'];
+    delete tempLesson['day'];
+
+    Object.values(newData['weeks'][originalLesson['week']][originalLesson['day']]).forEach((item, index) => {
+      if(JSON.stringify(item) === JSON.stringify(tempLesson)) {
+        newData['weeks'][originalLesson['week']][originalLesson['day']].splice(index, 1);
+      }
+    });
+
+    // check if week is exist, if not add it
+    if(newData['weeks'][modifiedLesson['week']] === undefined) {
+      newData['weeks'][modifiedLesson['week']] = {};
+    }
+
+    // check if day is exist, if not add it
+    if(newData['weeks'][modifiedLesson['week']][modifiedLesson['day']] === undefined) {
+      newData['weeks'][modifiedLesson['week']][modifiedLesson['day']] = [];
+    }
+
+    // check if original day's length is 0, if true delete it
+    if(Object.values(newData['weeks'][originalLesson['week']][originalLesson['day']]).length === 0) {
+      delete newData['weeks'][originalLesson['week']][originalLesson['day']];
+    }
+
+    // check if original week's length is 0, if true delete it
+    if(Object.keys(newData['weeks'][originalLesson['week']]).length === 0) {
+      delete newData['weeks'][originalLesson['week']];
+      this._currentWeek.next(Object.keys(newData['weeks'])[0]);
+    }
+
+    let tmp = newData['weeks'][modifiedLesson['week']][modifiedLesson['day']];
+    delete modifiedLesson['week'];
+    delete modifiedLesson['day'];
+    tmp.push(modifiedLesson);
   }
 }

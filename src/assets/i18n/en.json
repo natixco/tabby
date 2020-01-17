@@ -3,11 +3,13 @@
     "timetable": "Timetable",
     "homeworks": "Homeworks",
     "settings": "Settings",
-    "newLesson": "Add new lesson"
+    "newLesson": "Add new lesson",
+    "editLesson": "Edit lesson"
   },
   "SUBTITLE": {
     "timetable": "Here you can see your weekly schedule.",
-    "newLesson": "Set the lesson's details, then save it."
+    "newLesson": "Set the lesson's details, then save it.",
+    "editLesson": "Edit the lesson's details, then save it."
   },
   "SETTINGS": {
     "language": "Language",
@@ -19,7 +21,8 @@
     }
   },
   "NEWLESSON": {
-    "button": "Save and add lesson",
+    "newButton": "Save and add lesson",
+    "editButton": "Save lesson",
     "NORMAL": {
       "start_time": "Start time",
       "finish_time": "Finish time",

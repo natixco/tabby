@@ -95,22 +95,19 @@ export class TimetableComponent implements OnInit {
     this.menu.style.left = `${this.pageX - 240}px`;
     this.menu.style.display = 'block';
 
-    this.deleteLesson = {
-      lesson,
-      week,
-      day
-    }
+    this.currentLesson = {lesson,week,day};
+    this._DataService._currentLesson.next(this.currentLesson);
   }
 
   deleteProgress: number = 0;
-  deleteLesson: object;
+  currentLesson: object;
 
   holdHandler(e) {
     this.deleteProgress = e / 10;
     if(this.deleteProgress > 100) {
       this.deleteProgress = 0;
       this.menu.style.display = 'none';
-      this._DataService.deleteLesson(this.deleteLesson['lesson'],this.deleteLesson['week'],this.deleteLesson['day'])
+      this._DataService.deleteLesson(this.currentLesson['lesson'],this.currentLesson['week'],this.currentLesson['day'])
     }
   }
 }

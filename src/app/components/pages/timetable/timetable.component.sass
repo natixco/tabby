@@ -104,17 +104,19 @@
 
   ul
     position: relative
-    width: 100%
+    width: auto
 
     li
       position: relative
-      width: max-content
+      width: auto
       height: 70px
       padding-right: 20px
       display: flex
       flex-direction: row
       align-items: center
       cursor: pointer
+      outline: 0
+      border: 0
       &:first-of-type:hover
         i,p
           color: #fa5e62
@@ -140,3 +142,5 @@
         height: 100%
         background: rgba(#fa5e62,.1)
         transition: all .1s ease
+        border-top-left-radius: 4px
+        border-top-right-radius: 4px
