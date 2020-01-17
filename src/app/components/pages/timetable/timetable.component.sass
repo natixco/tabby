@@ -32,6 +32,9 @@
         height: auto
         margin-right: 30px
 
+        .today
+          font-family: 'Avenir-Bold'
+
         .timetable-title
           font-size: 16px
           font-weight: 400
@@ -54,11 +57,16 @@
           transition: all .4s ease
 
           .timetable-lesson-name
-            padding-top: 15px
+            padding-top: 10px
             padding-left: 15px
             font-size: 20px
             font-weight: 700
             color: color(accent)
+            display: inline-block
+            max-width: 250px
+            word-wrap: break-word
+            max-height: 50px
+            overflow: hidden
 
           .timetable-time
             padding-top: 5px
@@ -82,3 +90,53 @@
 
             span
               font-weight: 700
+
+
+.contextmenu
+  position: absolute
+  width: auto
+  height: auto
+  background: #F4F4F4
+  box-shadow: 0 4px 8px rgba(#727B96, .2)
+  display: none
+  z-index: 999999999999
+  border-radius: 4px
+
+  ul
+    position: relative
+    width: 100%
+
+    li
+      position: relative
+      width: max-content
+      height: 70px
+      padding-right: 20px
+      display: flex
+      flex-direction: row
+      align-items: center
+      cursor: pointer
+      &:first-of-type:hover
+        i,p
+          color: #fa5e62
+      &:hover
+        i,p
+          color: color(accent)
+
+      i
+        margin-left: 15px
+        font-size: 22px
+        color: rgba(color(text-one))
+
+      p
+        margin-left: 15px
+        font-size: 16px
+        color: rgba(color(text-one))
+
+      .deletebg
+        position: absolute
+        top: 0
+        left: 0
+        width: 0
+        height: 100%
+        background: rgba(#fa5e62,.1)
+        transition: all .1s ease

@@ -17,6 +17,7 @@
   // --color-text-one: #383E53
   // --color-text-two: #727B96
   --color-accent: #0366FC
+  --color-accent-disabled: #0258D8
   --color-accent-rgb: 3,102,252
   // --color-accent: #383ECB
   // --color-accent-rgb: 56,62,203
@@ -29,9 +30,7 @@
 
 body
   background: color(bg-one)
-  // overflow-x: hidden
-
-
+  overflow-x: hidden
 
 .header
   position: relative
@@ -45,7 +44,7 @@ body
   .text
     margin-left: 50px
 
-  .title
+  .title, span
     font-family: 'Avenir-Bold'
     font-size: 30px
     color: rgba(color(text-one))
@@ -58,6 +57,27 @@ body
 
   button
     margin-right: 50px
+
+  .icon
+    margin-right: 50px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    cursor: pointer
+    outline: 0
+    border: 0
+    &:hover
+      i
+        background: rgba(color(accent-rgb), .2)
+
+    i
+      padding: 20px
+      border-radius: 50%
+      background: rgba(color(accent-rgb), .1)
+      font-size: 30px
+      color: color(accent)
+      transition: all .2s ease
 
 select
   width: calc(250px - 15px)
@@ -140,13 +160,13 @@ select
   color: white
   background: color(accent)
   &:hover, &:focus
-    background: color(accent)
+    background: color(accent-hover)
 
 .btn-disabled
-  background: color(accent)
+  background: rgba(color(accent-rgb), .5)
   cursor: not-allowed
   &:hover, &:focus
-    background: color(accent)
+    background: rgba(color(accent-rgb), .5)
 
 
 .input-container

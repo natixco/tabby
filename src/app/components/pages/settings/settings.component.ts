@@ -13,6 +13,9 @@ export class SettingsComponent implements OnInit {
   active: Theme = light;
   isLight: boolean = true;
   accentColor: string;
+  weeks: string[];
+  objKeys = Object.keys;
+  currentWeek: string;
 
   constructor(
     private _TranslateService: TranslateService,
@@ -20,8 +23,14 @@ export class SettingsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.weeks = Object.keys(this._DataService.data['weeks']);
+
     this._DataService._accentColor.subscribe((color: string) => {
       this.accentColor = color;
+    });
+
+    this._DataService._currentWeek.subscribe((res: string) => {
+      this.currentWeek = res;
     });
   }
 
@@ -31,23 +40,8 @@ export class SettingsComponent implements OnInit {
   }
 
   changeAccentColor(color: string) {
-    // Object.keys(this.active.properties).forEach(property => {
-    //   document.documentElement.style.setProperty(
-    //     property,
-    //     this.active.properties[property]
-    //   );
-    // });
-    //this.active.properties["--color-accent"] = color;
-    // document.documentElement.style.setProperty("--color-accent", color);
-    // this._DataService._accentColor.next(color);
-
-    // let newData: object = this._DataService.data;
-    // newData["accentColor"] = color;
-    // this._DataService._data.next(newData);
     this._DataService.changeData("accentColor", color);
     this._DataService._accentColor.next(color);
-
-    // this._DataService.writeData();
   }
 
   changeTheme() {
@@ -59,6 +53,11 @@ export class SettingsComponent implements OnInit {
         this.active.properties[property]
       );
     });
+  }
+
+  changeCurrentWeek(week: string) {
+    this._DataService.changeData("currentWeek", week);
+    this._DataService._currentWeek.next(week);
   }
 
   getProperty(): string {

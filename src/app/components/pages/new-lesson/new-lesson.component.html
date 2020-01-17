@@ -1,7 +1,10 @@
 <div class="header">
   <div class="text">
     <h1 class="title" translate>TITLE.newLesson</h1>
-    <h2 class="subtitle">Lorem ipsum dolor sit amet.</h2>
+    <h2 class="subtitle" translate>SUBTITLE.newLesson</h2>
+  </div>
+  <div class="icon" routerLink="/">
+    <i class="eva eva-close-outline"></i>
   </div>
 </div>
 <div class="container">
@@ -33,6 +36,7 @@
             <span *ngIf="!form.lesson_name.touched || !form.lesson_name.errors" translate>NEWLESSON.NORMAL.lesson_name</span>
             <span *ngIf="form.lesson_name.touched && form.lesson_name.errors">
               <span *ngIf="form.lesson_name.errors.required" translate>NEWLESSON.ERROR.lesson_name</span>
+              <span *ngIf="form.lesson_name.errors.maxlength" translate>NEWLESSON.ERROR.lesson_name_maxlength</span>
             </span>
           </label>
           <input type="text" name="lesson_name" formControlName="lesson_name">
@@ -79,6 +83,6 @@
         </div>
       </li>
     </ul>
-    <button class="btn btn-primary--accent" (click)="saveLesson()" [disabled]="form.invalid" [ngClass]="{'btn-disabled': form.invalid}">Save and add lesson</button>
+    <button class="btn btn-primary--accent" (click)="saveLesson()" [disabled]="lessonForm.invalid" [ngClass]="{'btn-disabled': lessonForm.invalid}" translate>NEWLESSON.button</button>
   </form>
 </div>

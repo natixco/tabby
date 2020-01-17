@@ -6,10 +6,12 @@
     "newLesson": "Add new lesson"
   },
   "SUBTITLE": {
-    "timetable": "Here you can see your weekly schedule."
+    "timetable": "Here you can see your weekly schedule.",
+    "newLesson": "Set the lesson's details, then save it."
   },
   "SETTINGS": {
     "language": "Language",
+    "week": "Current week",
     "THEME": {
       "theme": "Theme",
       "darkMode": "Dark mode",
@@ -17,12 +19,13 @@
     }
   },
   "NEWLESSON": {
+    "button": "Save and add lesson",
     "NORMAL": {
       "start_time": "Start time",
       "finish_time": "Finish time",
       "lesson_name": "Lesson name",
-      "teacher_name": "Teacher name",
-      "class_room": "Class room",
+      "teacher_name": "Teacher name (optional)",
+      "class_room": "Class room (optional)",
       "week": "Week",
       "day": "Day"
     },
@@ -30,6 +33,7 @@
       "start_time": "Start time is required.",
       "finish_time": "Finish time is required.",
       "lesson_name": "Lesson name is required.",
+      "lesson_name_maxlength": "Lesson name can not be longer than 45 characters.",
       "week": "Week is required.",
       "day": "Day is required."
     }
@@ -42,5 +46,9 @@
     "friday": "Friday",
     "saturday": "Saturday",
     "sunday": "Sunday"
+  },
+  "CONTEXTMENU": {
+    "delete": "Press and hold to delete",
+    "edit": "Click to edit"
   }
 }

@@ -20,7 +20,7 @@ export class NewLessonComponent implements OnInit {
     this.lessonForm = new FormGroup({
       start_time: new FormControl('',Validators.required),
       finish_time: new FormControl('',Validators.required),
-      lesson_name: new FormControl('',Validators.required),
+      lesson_name: new FormControl('', [Validators.required, Validators.maxLength(45)]),
       week: new FormControl('',Validators.required),
       day: new FormControl('',Validators.required),
       teacher_name: new FormControl(''),

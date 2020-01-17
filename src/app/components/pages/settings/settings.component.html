@@ -6,15 +6,12 @@
 </div>
 <div class="container">
   <ul>
-    <!-- <li class="link" routerLink="/settings/editTimetable">
-      <div>
-        <h1 class="title" translate>SETTINGS.TIMETABLE.title</h1>
-        <h2 class="subtitle" translate>SETTINGS.TIMETABLE.subtitle</h2>
-      </div>
-      <div class="icon">
-        <i class="eva eva-chevron-right"></i>
-      </div>
-    </li> -->
+    <li *ngIf="objKeys(_DataService.data['weeks']).length !== 0">
+      <h1 class="title" translate>SETTINGS.week</h1>
+      <select (click)="changeCurrentWeek($event.target.value)">
+        <option *ngFor="let item of weeks" [value]="item" [selected]="item === _DataService.data['currentWeek']">{{item}}</option>
+      </select>
+    </li>
     <li>
       <h1 class="title" translate>SETTINGS.language</h1>
       <select (click)="changeLanguage($event.target.value)">

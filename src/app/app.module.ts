@@ -18,9 +18,12 @@ import { SettingsComponent } from './components/pages/settings/settings.componen
 import { TimetableComponent } from './components/pages/timetable/timetable.component';
 import { HomeworksComponent } from './components/pages/homeworks/homeworks.component';
 import { NewLessonComponent } from './components/pages/new-lesson/new-lesson.component';
+import { EditLessonComponent } from './components/pages/edit-lesson/edit-lesson.component';
+import { ContextmenuComponent } from './components/imported/contextmenu/contextmenu.component';
+import { HoldDeleteDirective } from './directives/hold-delete.directive';
 
 @NgModule({
-  declarations: [AppComponent, SidebarComponent, SettingsComponent, TimetableComponent, HomeworksComponent, NewLessonComponent],
+  declarations: [AppComponent, SidebarComponent, SettingsComponent, TimetableComponent, HomeworksComponent, NewLessonComponent, EditLessonComponent, ContextmenuComponent, HoldDeleteDirective],
   imports: [
     BrowserModule,
     ReactiveFormsModule,

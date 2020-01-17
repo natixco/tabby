@@ -17,10 +17,6 @@ export class AppComponent {
   ) {
     this._TranslateService.addLangs(['en', 'hu', 'de']);
     _TranslateService.setDefaultLang('en');
-
-    this._DataService._accentColor.subscribe((color: string) => {
-      document.documentElement.style.setProperty("--color-accent", color);
-    });
   }
 
   async ngOnInit() {

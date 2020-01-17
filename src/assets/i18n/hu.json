@@ -6,10 +6,12 @@
     "newLesson": "Új óra hozzáadása"
   },
   "SUBTITLE": {
-    "timetable": "Itt láthatod a heti óráidat."
+    "timetable": "Itt láthatod a heti óráidat.",
+    "newLesson": "Állítsd be az óra adatait, majd mentsd el."
   },
   "SETTINGS": {
     "language": "Nyelv",
+    "week": "Jelenlegi hét",
     "THEME": {
       "theme": "Téma",
       "darkMode": "Sötét mód",
@@ -17,19 +19,21 @@
     }
   },
   "NEWLESSON": {
+    "button": "Óra elmentése",
     "NORMAL": {
       "start_time": "Óra kezdési ideje",
       "finish_time": "Óra befejezési ideje",
       "lesson_name": "Tantárgy",
-      "teacher_name": "Tanár neve",
-      "class_room": "Osztályterem",
+      "teacher_name": "Tanár neve (opcionális)",
+      "class_room": "Osztályterem (opcionális)",
       "week": "Hét",
       "day": "Nap"
     },
     "ERROR": {
       "start_time": "A kezdési idő megadása kötelező.",
       "finish_time": "A befejezési idő megadása kötelező.",
-      "lesson_name": "Az osztályterem megadása kötelező.",
+      "lesson_name": "Az tantárgy megadása kötelező.",
+      "lesson_name_maxlength": "A tantárgy max 45 karakter hosszú lehet.",
       "week": "A hét megadása kötelező.",
       "day": "A nap megadása kötelező."
     }
@@ -42,5 +46,9 @@
     "friday": "Péntek",
     "saturday": "Szombat",
     "sunday": "Vasárnap"
+  },
+  "CONTEXTMENU": {
+    "delete": "Tartsd lenyomva a törléshez",
+    "edit": "Kattints a szerkesztéshez"
   }
 }
