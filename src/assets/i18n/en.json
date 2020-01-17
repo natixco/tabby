@@ -20,6 +20,10 @@
       "mainColor": "Main color"
     }
   },
+  "TIMETABLE": {
+    "title": "Your timetable is empty right now",
+    "subtitle": "Start by adding a new lesson with the button in the top right corner."
+  },
   "NEWLESSON": {
     "newButton": "Save and add lesson",
     "editButton": "Save lesson",

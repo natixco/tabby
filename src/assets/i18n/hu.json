@@ -20,6 +20,10 @@
       "mainColor": "Szín"
     }
   },
+  "TIMETABLE": {
+    "title": "Jelen pillanatban üres az órarended",
+    "subtitle": "Adj hozzá órákat a jobb felső sarokban található gombbal."
+  },
   "NEWLESSON": {
     "newButton": "Óra elmentése",
     "editButton": "Óra elmentése",

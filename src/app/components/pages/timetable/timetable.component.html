@@ -10,7 +10,15 @@
   <button class="btn btn-primary--accent" routerLink="/new-lesson" translate>TITLE.newLesson</button>
 </div>
 <div class="timetable-container">
-  <p *ngIf="!isDataLoaded">loading</p>
+  <div class="timetable-inner-container timetable-clear" *ngIf="!isDataLoaded">
+    <div class="loader"></div>
+  </div>
+  <div class="timetable-inner-container timetable-clear" *ngIf="isDataLoaded && objKeys(_DataService.data['weeks']).length === 0">
+    <div class="text">
+      <h1 translate>TIMETABLE.title</h1>
+      <h2 translate>TIMETABLE.subtitle</h2>
+    </div>
+  </div>
   <div class="timetable-inner-container" *ngIf="isDataLoaded && objKeys(_DataService.data['weeks']).length !== 0">
     <div class="timetable-week">
       <div class="timetable-day" *ngFor="let day of objKeys(_DataService.data['weeks'][currentWeek])">
