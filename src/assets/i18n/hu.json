@@ -4,12 +4,14 @@
     "tasks": "Feladatok",
     "settings": "Beállítások",
     "newLesson": "Új óra hozzáadása",
-    "editLesson": "Óra szerkesztése"
+    "editLesson": "Óra szerkesztése",
+    "newTask": "Új feladat hozzáadása"
   },
   "SUBTITLE": {
     "timetable": "Itt láthatod a heti óráidat.",
     "newLesson": "Állítsd be az óra adatait, majd mentsd el.",
-    "editLesson": "Módosítsd az óra adatait, majd mentsd el."
+    "editLesson": "Módosítsd az óra adatait, majd mentsd el.",
+    "newTask": "Írd be a feladatot majd mentsd el."
   },
   "SETTINGS": {
     "language": "Nyelv",
@@ -22,7 +24,11 @@
   },
   "TIMETABLE": {
     "title": "Jelen pillanatban üres az órarended",
-    "subtitle": "Adj hozzá órákat a jobb felső sarokban található gombbal."
+    "subtitle": "Hozz létre órákat a jobb felső sarokban található gombbal."
+  },
+  "TASKS": {
+    "title": "Jelen pillanatban nincs egy feladatod sem",
+    "subtitle": "Hozz létre új feladatokat a jobb felső sarokban található gombbal."
   },
   "NEWLESSON": {
     "newButton": "Óra elmentése",
@@ -43,6 +49,16 @@
       "lesson_name_maxlength": "A tantárgy max 45 karakter hosszú lehet.",
       "week": "A hét megadása kötelező.",
       "day": "A nap megadása kötelező."
+    }
+  },
+  "NEWTASK": {
+    "button": "Feladat elmentése",
+    "NORMAL": {
+      "task": "Feladat",
+      "description": "Leírás (opcionális)"
+    },
+    "ERROR": {
+      "task": "A feladat leírása kötelező."
     }
   },
   "DAYS": {

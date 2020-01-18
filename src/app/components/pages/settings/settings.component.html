@@ -8,16 +8,20 @@
   <ul>
     <li *ngIf="objKeys(_DataService.data['weeks']).length !== 0">
       <h1 class="title" translate>SETTINGS.week</h1>
-      <select (click)="changeCurrentWeek($event.target.value)">
-        <option *ngFor="let item of weeks" [value]="item" [selected]="item === _DataService.data['currentWeek']">{{item}}</option>
-      </select>
+      <div class="input-container">
+        <select (click)="changeCurrentWeek($event.target.value)">
+          <option *ngFor="let item of weeks" [value]="item" [selected]="item === _DataService.data['currentWeek']">{{item}}</option>
+        </select>
+      </div>
     </li>
     <li>
       <h1 class="title" translate>SETTINGS.language</h1>
-      <select (click)="changeLanguage($event.target.value)">
-        <option value="en" [selected]="getCurrentLang() === 'en'">English</option>
-        <option value="hu" [selected]="getCurrentLang() === 'hu'">Magyar</option>
-      </select>
+      <div class="input-container">
+        <select (click)="changeLanguage($event.target.value)">
+          <option value="en" [selected]="getCurrentLang() === 'en'">English</option>
+          <option value="hu" [selected]="getCurrentLang() === 'hu'">Magyar</option>
+        </select>
+      </div>
     </li>
     <li>
       <h1 class="title" translate>SETTINGS.THEME.theme</h1>

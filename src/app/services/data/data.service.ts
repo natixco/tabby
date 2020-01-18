@@ -113,7 +113,8 @@ export class DataService {
       "language": "en",
       "darkMode": false,
       "currentWeek": "",
-      "weeks": {}
+      "weeks": {},
+      "tasks": []
     }
     writeFile(this.app.getPath('userData') + '/data.json', JSON.stringify(defaultData), (err) => {
       if(err !== null) console.log(err);

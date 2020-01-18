@@ -72,7 +72,7 @@ export class LessonService {
     let newData: object = this._DataService.data;
 
     Object.values(newData['weeks'][week][day]).forEach((item, index) => {
-      if(item === lesson) {
+      if(JSON.stringify(item) === JSON.stringify(lesson)) {
         newData['weeks'][week][day].splice(index, 1);
       }
     });

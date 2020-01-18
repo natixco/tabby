@@ -4,12 +4,14 @@
     "tasks": "Tasks",
     "settings": "Settings",
     "newLesson": "Add new lesson",
-    "editLesson": "Edit lesson"
+    "editLesson": "Edit lesson",
+    "newTask": "Add new task"
   },
   "SUBTITLE": {
     "timetable": "Here you can see your weekly schedule.",
     "newLesson": "Set the lesson's details, then save it.",
-    "editLesson": "Edit the lesson's details, then save it."
+    "editLesson": "Edit the lesson's details, then save it.",
+    "newTask": "Set the task, then save it."
   },
   "SETTINGS": {
     "language": "Language",
@@ -23,6 +25,10 @@
   "TIMETABLE": {
     "title": "Your timetable is empty right now",
     "subtitle": "Start by adding a new lesson with the button in the top right corner."
+  },
+  "TASKS": {
+    "title": "You have no tasks right now",
+    "subtitle": "Start by adding a new tsak with the button in the top right corner."
   },
   "NEWLESSON": {
     "newButton": "Save and add lesson",
@@ -43,6 +49,16 @@
       "lesson_name_maxlength": "Lesson name can not be longer than 45 characters.",
       "week": "Week is required.",
       "day": "Day is required."
+    }
+  },
+  "NEWTASK": {
+    "button": "Save and add task",
+    "NORMAL": {
+      "task": "Task",
+      "description": "Description (optional)"
+    },
+    "ERROR": {
+      "task": "Title is required."
     }
   },
   "DAYS": {
