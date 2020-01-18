@@ -39,7 +39,7 @@ export class NewLessonComponent implements OnInit {
 
   saveLesson() {
     this._DataService.saveLesson(this.lessonForm.value);
-    // this._Router.navigate(['/timetable']);
+    this._Router.navigate(['/timetable']);
   }
 
 }

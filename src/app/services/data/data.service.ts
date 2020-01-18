@@ -238,6 +238,31 @@ export class DataService {
         delete newData['weeks'][originalLesson['week']];
         this._currentWeek.next(Object.keys(newData['weeks'])[0]);
       }
+
+      // sort day by lesson start times
+      newData['weeks'][modifiedLesson['week']][modifiedLesson['day']].sort( (a: object, b: object) => {
+        if(a['start_time'] > b['start_time']) return 1;
+        else if(b['start_time'] > a['start_time']) return -1;
+        return 0;
+      })
+
+      // sort days of week
+      const days = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"];
+      var sorted = {};
+      var keys2 = Object.keys(newData['weeks']);
+      for(let i=0; i<keys2.length; i++) {
+        sorted[keys2[i]] = {};
+        Object.keys(newData['weeks'][keys2[i]]).sort( (a,b) => {
+          var indexA = days.indexOf(a.toLowerCase());
+          var indexB = days.indexOf(b.toLowerCase());
+          if(indexA < indexB) return -1;
+          else if(indexA > indexB) return 1;
+          return 0;
+        }).map(elem=>{
+          sorted[keys2[i]][elem] = newData['weeks'][keys2[i]][elem];
+        });
+      }
+      newData['weeks'] = sorted;
     }
 
     let tmp = newData['weeks'][modifiedLesson['week']][modifiedLesson['day']];
