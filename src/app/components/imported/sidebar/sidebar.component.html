@@ -1,6 +1,6 @@
 <div class="sidebar">
   <ul class="menu">
-    <div class="bar" [style.opacity]="(_Router.url === '/' || _Router.url === '/timetable' || _Router.url === '/homeworks' || _Router.url === '/settings') ? '1' : '0'"></div>
+    <div class="bar" [style.opacity]="(_Router.url === '/' || _Router.url === '/timetable' || _Router.url === '/tasks' || _Router.url === '/settings') ? '1' : '0'"></div>
     <li routerLink="/timetable" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
       <div class="icon">
         <i class="eva eva-calendar-outline" *ngIf="_Router.url !== '/timetable'"></i>

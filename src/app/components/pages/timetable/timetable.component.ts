@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '@services/data/data.service';
+import { LessonService } from '@services/lesson/lesson.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -22,7 +23,8 @@ export class TimetableComponent implements OnInit {
 
   constructor(
     public _DataService: DataService,
-    private _TranslateService: TranslateService
+    private _TranslateService: TranslateService,
+    private _LessonService: LessonService
   ) {
     this._DataService._isDataLoaded.subscribe((res: boolean) => {
       this.isDataLoaded = res;
@@ -107,7 +109,7 @@ export class TimetableComponent implements OnInit {
     if(this.deleteProgress > 100) {
       this.deleteProgress = 0;
       this.menu.style.display = 'none';
-      this._DataService.deleteLesson(this.currentLesson['lesson'],this.currentLesson['week'],this.currentLesson['day'])
+      this._LessonService.deleteLesson(this.currentLesson['lesson'],this.currentLesson['week'],this.currentLesson['day'])
     }
   }
 }
