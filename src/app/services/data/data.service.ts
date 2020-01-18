@@ -218,30 +218,34 @@ export class DataService {
       }
     });
 
-    // check if week is exist, if not add it
-    if(newData['weeks'][modifiedLesson['week']] === undefined) {
-      newData['weeks'][modifiedLesson['week']] = {};
-    }
+    if(modifiedLesson['week'] !== originalLesson['week'] || modifiedLesson['day'] !== originalLesson['day']) {
+      // check if week is exist, if not add it
+      if(newData['weeks'][modifiedLesson['week']] === undefined) {
+        newData['weeks'][modifiedLesson['week']] = {};
+      }
 
-    // check if day is exist, if not add it
-    if(newData['weeks'][modifiedLesson['week']][modifiedLesson['day']] === undefined) {
-      newData['weeks'][modifiedLesson['week']][modifiedLesson['day']] = [];
-    }
+      // check if day is exist, if not add it
+      if(newData['weeks'][modifiedLesson['week']][modifiedLesson['day']] === undefined) {
+        newData['weeks'][modifiedLesson['week']][modifiedLesson['day']] = [];
+      }
+      // check if original day's length is 0, if true delete it
+      if(Object.values(newData['weeks'][originalLesson['week']][originalLesson['day']]).length === 0) {
+        delete newData['weeks'][originalLesson['week']][originalLesson['day']];
+      }
 
-    // check if original day's length is 0, if true delete it
-    if(Object.values(newData['weeks'][originalLesson['week']][originalLesson['day']]).length === 0) {
-      delete newData['weeks'][originalLesson['week']][originalLesson['day']];
-    }
-
-    // check if original week's length is 0, if true delete it
-    if(Object.keys(newData['weeks'][originalLesson['week']]).length === 0) {
-      delete newData['weeks'][originalLesson['week']];
-      this._currentWeek.next(Object.keys(newData['weeks'])[0]);
+      // check if original week's length is 0, if true delete it
+      if(Object.keys(newData['weeks'][originalLesson['week']]).length === 0) {
+        delete newData['weeks'][originalLesson['week']];
+        this._currentWeek.next(Object.keys(newData['weeks'])[0]);
+      }
     }
 
     let tmp = newData['weeks'][modifiedLesson['week']][modifiedLesson['day']];
     delete modifiedLesson['week'];
     delete modifiedLesson['day'];
     tmp.push(modifiedLesson);
+
+    this._data.next(newData);
+    this.writeData();
   }
 }
