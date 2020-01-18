@@ -1,7 +1,7 @@
 {
   "TITLE": {
     "timetable": "Órarend",
-    "homeworks": "Házi feladatok",
+    "tasks": "Feladatok",
     "settings": "Beállítások",
     "newLesson": "Új óra hozzáadása",
     "editLesson": "Óra szerkesztése"

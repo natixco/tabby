@@ -1,7 +1,7 @@
 {
   "TITLE": {
     "timetable": "Timetable",
-    "homeworks": "Homeworks",
+    "tasks": "Tasks",
     "settings": "Settings",
     "newLesson": "Add new lesson",
     "editLesson": "Edit lesson"
