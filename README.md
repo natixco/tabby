@@ -1,5 +1,6 @@
-## Timetable
+## Introduction
 Simple, beautiful timetable application to track your school schedule. You can even add now tasks, change theme and change language.
+Made by me and KDani-99. We used this bootstrap to make it https://github.com/maximegris/angular-electron.
 
 ## Screenshots
 
