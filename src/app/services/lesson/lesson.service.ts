@@ -18,11 +18,9 @@ export class LessonService {
       newData['weeks'][lesson['week']] = {};
     }
 
-    // check if weeks length is 1 to set currentWeek first time
-    if(Object.keys(newData['weeks']).length === 1) {
-      newData['currentWeek'] = lesson['week'];
-      this._DataService._currentWeek.next(lesson['week']);
-    }
+    // change currentWeek to added lesson's week
+    newData['currentWeek'] = lesson['week'];
+    this._DataService._currentWeek.next(lesson['week']);
 
     // check if day is exist, if not add it
     if(newData['weeks'][lesson['week']][lesson['day']] === undefined) {
