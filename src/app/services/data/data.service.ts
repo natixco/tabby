@@ -47,9 +47,9 @@ export class DataService {
       } else if(color === '#8980F5') {
         document.documentElement.style.setProperty("--color-accent-rgb", "137,128,245");
         document.documentElement.style.setProperty("--color-accent-hover", "#736BCE");
-      } else if(color === '#FFBA08') {
+      } else if(color === '#E5A910') {
         document.documentElement.style.setProperty("--color-accent-rgb", "255,186,8");
-        document.documentElement.style.setProperty("--color-accent-hover", "#D89D06");
+        document.documentElement.style.setProperty("--color-accent-hover", "#BF8C0D");
       }
     });
 

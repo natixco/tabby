@@ -28,7 +28,6 @@ const routes: Routes = [
   {
     path: 'new-lesson',
     component: NewLessonComponent
-    // loadChildren: '../app/components/pages/new-lesson/new-lesson.module#NewLessonModule'
   },
   {
     path: 'edit-lesson',

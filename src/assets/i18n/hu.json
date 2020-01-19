@@ -9,6 +9,8 @@
   },
   "SUBTITLE": {
     "timetable": "Itt láthatod a heti óráidat.",
+    "tasks": "Itt láthatod a feladataidat.",
+    "settings": "Változtasd meg a beállításaid. Ezek automatikusan el lesznek mentve.",
     "newLesson": "Állítsd be az óra adatait, majd mentsd el.",
     "editLesson": "Módosítsd az óra adatait, majd mentsd el.",
     "newTask": "Írd be a feladatot majd mentsd el."
