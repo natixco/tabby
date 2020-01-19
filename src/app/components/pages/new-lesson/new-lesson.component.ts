@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { DataService } from '@services/data/data.service';
+import { LessonService } from '@services/lesson/lesson.service';
 
 @Component({
   selector: 'app-new-lesson',
@@ -14,7 +14,7 @@ export class NewLessonComponent implements OnInit {
   weeks: string[];
 
   constructor(
-    private _DataService: DataService,
+    private _LessonService: LessonService,
     private _Router: Router
   ) {
     this.lessonForm = new FormGroup({
@@ -38,7 +38,7 @@ export class NewLessonComponent implements OnInit {
   }
 
   saveLesson() {
-    this._DataService.saveLesson(this.lessonForm.value);
+    this._LessonService.saveLesson(this.lessonForm.value);
     this._Router.navigate(['/timetable']);
   }
 

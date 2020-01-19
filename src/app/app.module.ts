@@ -16,14 +16,15 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './components/imported/sidebar/sidebar.component';
 import { SettingsComponent } from './components/pages/settings/settings.component';
 import { TimetableComponent } from './components/pages/timetable/timetable.component';
-import { HomeworksComponent } from './components/pages/homeworks/homeworks.component';
+import { TasksComponent } from './components/pages/tasks/tasks.component';
 import { NewLessonComponent } from './components/pages/new-lesson/new-lesson.component';
 import { EditLessonComponent } from './components/pages/edit-lesson/edit-lesson.component';
 import { ContextmenuComponent } from './components/imported/contextmenu/contextmenu.component';
 import { HoldDeleteDirective } from './directives/hold-delete.directive';
+import { NewTaskComponent } from './components/pages/new-task/new-task.component';
 
 @NgModule({
-  declarations: [AppComponent, SidebarComponent, SettingsComponent, TimetableComponent, HomeworksComponent, NewLessonComponent, EditLessonComponent, ContextmenuComponent, HoldDeleteDirective],
+  declarations: [AppComponent, SidebarComponent, SettingsComponent, TimetableComponent, TasksComponent, NewLessonComponent, EditLessonComponent, ContextmenuComponent, HoldDeleteDirective, NewTaskComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,

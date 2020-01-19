@@ -79,23 +79,88 @@ body
       color: color(accent)
       transition: all .2s ease
 
-select
-  width: calc(250px - 15px)
+// BUTTON
+.btn
   height: 45px
+  line-height: 45px
+  padding: 0 30px
   border-radius: 4px
-  border: 1px solid rgba(0,0,0,.1)
-  outline: 0
-  background: white
-  font-size: 16px
-  color: color(text-two)
-  padding-left: 15px
   cursor: pointer
+  font-size: 16px
+  font-weight: 400
+  background: transparent
+  text-align: center
+  overflow: hidden
   transition: all .2s ease
-  &:hover
-    border-color: rgba(0,0,0,.2)
-  &:focus
-    border-color: color(accent)
+  text-decoration: none
+  display: block
+  outline: none
+  border: none
 
+.btn-primary--accent
+  color: white
+  background: color(accent)
+  &:hover, &:focus
+    background: color(accent-hover)
+
+.btn-disabled
+  background: rgba(color(accent-rgb), .5)
+  cursor: not-allowed
+  &:hover, &:focus
+    background: rgba(color(accent-rgb), .5)
+
+// INPUT
+.input-container
+  width: auto
+  height: auto
+  display: flex
+  flex-direction: column
+  &:focus-within
+    label
+      color: color(accent)
+
+  input, select, textarea
+    color: rgba(color(text-one))
+    border-radius: 4px
+    width: 335px
+    height: 45px
+    margin-bottom: 25px
+    padding-left: 15px
+    font-weight: 400
+    font-size: 16px
+    background: white !important
+    border: 1px solid rgba(0,0,0,.1)
+    transition: all .4s ease
+    outline: 0
+    &:hover
+      border-color: rgba(0,0,0,.2)
+    &:focus
+      border-color: color(accent)
+    &:focus ~ label
+      color: color(accent)
+
+  input[type="time"]
+    text-align: right
+
+  select
+    cursor: pointer
+    width: 350px
+
+  label
+    pointer-events: none
+    transition: all .4s ease
+    position: relative
+    // margin-left: 15px
+    margin-right: 15px
+    font-size: 15px
+    margin-bottom: 10px
+    display: inline-block
+    color: rgba(color(text-one))
+
+  .input-invalid
+    color: #fa5e62
+
+// CUSTOM CHECKBOX
 .checkbox
   position: relative
   width: 30px
@@ -135,86 +200,3 @@ select
       opacity: 0
       font-size: 18px
       color: white
-
-
-
-.btn
-  height: 45px
-  line-height: 45px
-  padding: 0 30px
-  border-radius: 4px
-  cursor: pointer
-  font-size: 16px
-  font-weight: 400
-  background: transparent
-  text-align: center
-  overflow: hidden
-  transition: all .2s ease
-  text-decoration: none
-  display: block
-  outline: none
-  border: none
-
-//----------------------------------------- PRIMARY
-.btn-primary--accent
-  color: white
-  background: color(accent)
-  &:hover, &:focus
-    background: color(accent-hover)
-
-.btn-disabled
-  background: rgba(color(accent-rgb), .5)
-  cursor: not-allowed
-  &:hover, &:focus
-    background: rgba(color(accent-rgb), .5)
-
-
-.input-container
-  width: auto
-  height: auto
-  display: flex
-  flex-direction: column
-  &:focus-within
-    label
-      color: color(accent)
-
-  input, select
-    color: rgba(color(text-one))
-    border-radius: 4px
-    width: 335px
-    height: 45px
-    margin-bottom: 25px
-    padding-left: 15px
-    font-weight: 400
-    font-size: 16px
-    background: white !important
-    border: 1px solid rgba(0,0,0,.1)
-    transition: all .4s ease
-    outline: 0
-    &:hover
-      border-color: rgba(0,0,0,.2)
-    &:focus
-      border-color: color(accent)
-    &:focus ~ label
-      color: color(accent)
-
-  input[type="time"]
-    text-align: right
-
-  select
-    cursor: pointer
-    width: 350px
-
-  label
-    pointer-events: none
-    transition: all .4s ease
-    position: relative
-    // margin-left: 15px
-    margin-right: 15px
-    font-size: 15px
-    margin-bottom: 10px
-    display: inline-block
-    color: rgba(color(text-one))
-
-  .input-invalid
-    color: red

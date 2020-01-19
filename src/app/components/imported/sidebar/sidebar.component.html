@@ -1,6 +1,6 @@
 <div class="sidebar">
   <ul class="menu">
-    <div class="bar" [style.opacity]="(_Router.url === '/' || _Router.url === '/timetable' || _Router.url === '/homeworks' || _Router.url === '/settings') ? '1' : '0'"></div>
+    <div class="bar" [style.opacity]="(_Router.url === '/' || _Router.url === '/timetable' || _Router.url === '/tasks' || _Router.url === '/settings') ? '1' : '0'"></div>
     <li routerLink="/timetable" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
       <div class="icon">
         <i class="eva eva-calendar-outline" *ngIf="_Router.url !== '/timetable'"></i>
@@ -8,12 +8,12 @@
       </div>
       <p translate>TITLE.timetable</p>
     </li>
-    <li routerLink="/homeworks" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+    <li routerLink="/tasks" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
       <div class="icon">
-        <i class="eva eva-checkmark-circle-2-outline" *ngIf="_Router.url !== '/homeworks'"></i>
-        <i class="eva eva-checkmark-circle-2" *ngIf="_Router.url === '/homeworks'"></i>
+        <i class="eva eva-checkmark-circle-2-outline" *ngIf="_Router.url !== '/tasks'"></i>
+        <i class="eva eva-checkmark-circle-2" *ngIf="_Router.url === '/tasks'"></i>
       </div>
-      <p translate>TITLE.homeworks</p>
+      <p translate>TITLE.tasks</p>
     </li>
     <!-- <li routerLink="/activities" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
       <i class="eva eva-time"></i>
