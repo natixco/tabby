@@ -3,9 +3,9 @@ Simple, beautiful timetable application to track your school schedule. You can e
 
 ## Screenshots
 
-![Screenshot 1](/screenshots/1.png)
-![Screenshot 2](/screenshots/2.png)
-![Screenshot 3](/screenshots/3.png)
+![Screenshot 1](/src/screenshots/1.png)
+![Screenshot 2](/src/screenshots/2.png)
+![Screenshot 3](/src/screenshots/3.png)
 
 ## Translation
 **Currently available languages**: english and hungarian
