@@ -83,10 +83,11 @@
           height: 140px
           margin-bottom: 15px
           // box-shadow: 0 4px 8px rgba(0,0,0,.05)
-          box-shadow: 0 4px 8px rgba(#727B96, .1)
+          // box-shadow: 0 4px 8px rgba(#727B96, .1)
+          box-shadow: 0 4px 8px rgba(color(card-shadow-rgb), .1)
           border-radius: 5px
           z-index: 99
-          background: color(bg-one)
+          background: color(bg-card)
           display: flex
           flex-direction: column
           transition: all .4s ease
@@ -131,8 +132,8 @@
   position: absolute
   width: auto
   height: auto
-  background: #F4F4F4
-  box-shadow: 0 4px 8px rgba(#727B96, .2)
+  background: color(bg-two)
+  box-shadow: 0 4px 8px rgba(color(card-shadow-rgb), .2)
   display: none
   z-index: 999999999999
   border-radius: 4px

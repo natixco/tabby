@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Theme, light, dark } from '../../../../assets/themes';
 import { DataService } from '@services/data/data.service';
 
 @Component({
@@ -10,8 +9,7 @@ import { DataService } from '@services/data/data.service';
 })
 export class SettingsComponent implements OnInit {
 
-  active: Theme = light;
-  isLight: boolean = true;
+  darkMode: boolean = true;
   accentColor: string;
   weeks: string[];
   objKeys = Object.keys;
@@ -27,6 +25,10 @@ export class SettingsComponent implements OnInit {
 
     this._DataService._accentColor.subscribe((color: string) => {
       this.accentColor = color;
+    });
+
+    this._DataService._darkMode.subscribe((res: boolean) => {
+      this.darkMode = res;
     });
 
     this._DataService._currentWeek.subscribe((res: string) => {
@@ -45,14 +47,16 @@ export class SettingsComponent implements OnInit {
   }
 
   changeTheme() {
-    this.active = (this.isLight ? dark : light);
-    this.isLight = !this.isLight;
-    Object.keys(this.active.properties).forEach(property => {
-      document.documentElement.style.setProperty(
-        property,
-        this.active.properties[property]
-      );
-    });
+    // this.active = (this.darkMode ? dark : light);
+    // this.darkMode = !this.darkMode;
+    this._DataService.changeData("darkMode", !this.darkMode);
+    this._DataService._darkMode.next(!this.darkMode);
+    // Object.keys(this.active.properties).forEach(property => {
+    //   document.documentElement.style.setProperty(
+    //     property,
+    //     this.active.properties[property]
+    //   );
+    // });
   }
 
   changeCurrentWeek(week: string) {

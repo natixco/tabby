@@ -27,15 +27,15 @@
     <li>
       <h1 class="title" translate>SETTINGS.THEME.theme</h1>
       <div class="theme-container">
-        <!-- <div class="theme-inner-container">
+        <div class="theme-inner-container">
           <p translate>SETTINGS.THEME.darkMode</p>
           <div class="checkbox">
-            <input type="checkbox" (click)="changeTheme()">
+            <input type="checkbox" (click)="changeTheme()" [checked]="darkMode">
             <div class="custom-checkbox">
               <i class="eva eva-checkmark-outline"></i>
             </div>
           </div>
-        </div> -->
+        </div>
         <div class="theme-inner-container">
           <p translate>SETTINGS.THEME.mainColor</p>
           <ul class="color-container">

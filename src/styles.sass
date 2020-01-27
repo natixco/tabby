@@ -10,15 +10,16 @@
   @return var(--color-#{$color-name})
 
 :root
-  --color-bg-one: #FFF
+  --color-bg-one: #FFFFFF
   --color-bg-two: #f9f9f9
-  --color-text-one: 56, 62, 83, 1
-  --color-text-two: 114, 123, 150, 1
-  // --color-text-one: #383E53
-  // --color-text-two: #727B96
+  --color-bg-three: #C6C6C6
+  --color-bg-card: #FFFFFF,
+  --color-text-one: 56, 62, 83, 1       //#383E53
+  --color-text-two: 114, 123, 150, 1    //#727B96
   --color-accent: #0366FC
-  --color-accent-disabled: #0258D8
   --color-accent-rgb: 3,102,252
+  --color-card-shadow-rgb: 114, 123, 150
+  --color-blackwhite: 0,0,0
   // --color-accent: #383ECB
   // --color-accent-rgb: 56,62,203
 
@@ -27,6 +28,7 @@
   padding: 0
   font-family: 'Avenir'
   user-select: none
+  transition: all .4 ease
 
 body
   background: color(bg-one)
@@ -129,12 +131,12 @@ body
     padding-left: 15px
     font-weight: 400
     font-size: 16px
-    background: white !important
-    border: 1px solid rgba(0,0,0,.1)
+    background: transparent
+    border: 1px solid rgba(color(blackwhite),.1)
     transition: all .4s ease
     outline: 0
     &:hover
-      border-color: rgba(0,0,0,.2)
+      border-color: rgba(color(blackwhite),.2)
     &:focus
       border-color: color(accent)
     &:focus ~ label
@@ -201,3 +203,14 @@ body
       opacity: 0
       font-size: 18px
       color: white
+
+
+::-webkit-scrollbar
+  width: 10px
+  height: 10px
+
+::-webkit-scrollbar-track
+  background: color(bg-two)
+
+::-webkit-scrollbar-thumb
+  background: color(bg-three)
