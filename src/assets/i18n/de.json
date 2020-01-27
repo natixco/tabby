@@ -1,0 +1,79 @@
+{
+  "TITLE": {
+    "timetable": "Stundenplan",
+    "tasks": "Aufgaben",
+    "settings": "Einstellungen",
+    "newLesson": "Neue Lektion hinzufügen",
+    "editLesson": "Lektion bearbeiten",
+    "newTask": "Neue Aufgabe hinzufügen"
+  },
+  "SUBTITLE": {
+    "timetable": "Hier können Sie Ihren Stundenplan ansehen.",
+    "tasks": "Hier können Sie Ihre Aufgaben sehen.",
+    "settings": "Sie können hier Ihre Einstellungen ändern. Sie werden automatisch gespeichert.",
+    "newLesson": "Speichern und legen Sie die Details der Lektion fest.",
+    "editLesson": "Bearbeiten und speichern Sie die Details der Lektion.",
+    "newTask": "Legen Sie die Aufgabe fest und speichern Sie sie dann."
+  },
+  "SETTINGS": {
+    "language": "Sprache",
+    "week": "Aktuelle Woche",
+    "THEME": {
+      "theme": "Design-Motiv",
+      "darkMode": "Nachtmodus",
+      "mainColor": "Hauptfarbe"
+    }
+  },
+  "TIMETABLE": {
+    "title": "Ihr Stundenplan ist im Moment leer.",
+    "subtitle": "Beginnen Sie mit dem Hinzufügen einer neuen Lektion mit der Schaltfläche in der rechten oberen Ecke."
+  },
+  "TASKS": {
+    "title": "Sie haben im Moment keine Aufgaben",
+    "subtitle": "Beginnen Sie mit dem Hinzufügen eines neuen Aufgabe mit der Schaltfläche in der rechten oberen Ecke."
+  },
+  "NEWLESSON": {
+    "newButton": "Lektion speichern und hinzufügen",
+    "editButton": "Lektion speichern",
+    "NORMAL": {
+      "start_time": "Startet am",
+      "finish_time": "Endet am",
+      "lesson_name": "Name der Lektion:",
+      "teacher_name": "Name des Lehrers (optional)",
+      "class_room": "Klassenzimmer (optional)",
+      "week": "Woche",
+      "day": "Tag"
+    },
+    "ERROR": {
+      "start_time": "Startzeit wird benötigt.",
+      "finish_time": "Endzeit wird benötigt.",
+      "lesson_name": "Name der Lektion wird benötigt.",
+      "lesson_name_maxlength": "Name der Lektion kann nicht länger sein als 45 Charakter-Zeichen.",
+      "week": "Woche wird benötigt.",
+      "day": "Tag wird benötigt."
+    }
+  },
+  "NEWTASK": {
+    "button": "Aufgabe speichern und hinzufügen",
+    "NORMAL": {
+      "task": "Aufgabe",
+      "description": "Beschreibung (optional)"
+    },
+    "ERROR": {
+      "task": "Titel ist erforderlich."
+    }
+  },
+  "DAYS": {
+    "monday": "Montag",
+    "tuesday": "Dienstag",
+    "wednesday": "Mittwoch",
+    "thursday": "Donnerstag",
+    "friday": "Freitag",
+    "saturday": "Samstag",
+    "sunday": "Sonntag"
+  },
+  "CONTEXTMENU": {
+    "delete": "Drücken und halten Sie zum Löschen",
+    "edit": "Klicke zum Bearbeiten"
+  }
+}
