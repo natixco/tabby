@@ -83,39 +83,3 @@
       p
         color: color(accent)
         font-weight: 700
-
-  .sidebartoggle-button
-    position: absolute
-    left: 0
-    bottom: 0
-    width: 100%
-    height: 50px
-    cursor: pointer
-    &:hover
-      background: rgba(color(accent), .1)
-
-    .icon
-      left: 0
-      width: 80px
-      height: 100%
-      display: flex
-      flex-direction: column
-      align-items: center
-      justify-content: center
-
-      fa-icon
-        font-size: 20px
-        color: color(text-one)
-        transition: all .4s ease
-        transform: rotate(0deg)
-
-      .rotatedIcon
-        transform: rotate(180deg)
-
-.small-sidebar
-
-  p
-    opacity: 0
-    transition: all .2s ease !important
-    transition-delay: 0s !important
-    visibility: hidden

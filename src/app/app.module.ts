@@ -19,12 +19,11 @@ import { TimetableComponent } from './components/pages/timetable/timetable.compo
 import { TasksComponent } from './components/pages/tasks/tasks.component';
 import { NewLessonComponent } from './components/pages/new-lesson/new-lesson.component';
 import { EditLessonComponent } from './components/pages/edit-lesson/edit-lesson.component';
-import { ContextmenuComponent } from './components/imported/contextmenu/contextmenu.component';
 import { HoldDeleteDirective } from './directives/hold-delete.directive';
 import { NewTaskComponent } from './components/pages/new-task/new-task.component';
 
 @NgModule({
-  declarations: [AppComponent, SidebarComponent, SettingsComponent, TimetableComponent, TasksComponent, NewLessonComponent, EditLessonComponent, ContextmenuComponent, HoldDeleteDirective, NewTaskComponent],
+  declarations: [AppComponent, SidebarComponent, SettingsComponent, TimetableComponent, TasksComponent, NewLessonComponent, EditLessonComponent, HoldDeleteDirective, NewTaskComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
