@@ -35,7 +35,7 @@ export class TaskService {
     let newData: object = this._DataService.data;
     newData['tasks'].forEach((item, index) => {
       if(JSON.stringify(item) === JSON.stringify(task)) {
-        newData['tasks'][index] = { task: task['task'], checked: !task['checked']};
+        newData['tasks'][index] = { task: task['task'], description: task['description'], checked: !task['checked']};
         this._DataService._data.next(newData);
         this._DataService.writeData();
         return;

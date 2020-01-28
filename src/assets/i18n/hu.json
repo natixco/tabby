@@ -8,8 +8,8 @@
     "newTask": "Új feladat hozzáadása"
   },
   "SUBTITLE": {
-    "timetable": "Itt láthatod a heti óráidat.",
-    "tasks": "Itt láthatod a feladataidat.",
+    "timetable": "Itt láthatod a heti óráidat. Óra szerkesztéséhez vagy törléséhez kattints a jobb egérgombbal az adott órára.",
+    "tasks": "Itt láthatod a feladataidat. Egy feladat törléséhez kattints és tartsd lenyomva a törlés gombot.",
     "settings": "Változtasd meg a beállításaid. Ezek automatikusan el lesznek mentve.",
     "newLesson": "Állítsd be az óra adatait, majd mentsd el.",
     "editLesson": "Módosítsd az óra adatait, majd mentsd el.",

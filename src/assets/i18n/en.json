@@ -8,8 +8,8 @@
     "newTask": "Add new task"
   },
   "SUBTITLE": {
-    "timetable": "Here you can see your weekly schedule.",
-    "tasks": "Here you can see your tasks.",
+    "timetable": "Here you can see your weekly schedule. Right click on the lessons to edit or delete them.",
+    "tasks": "Here you can see your tasks. To delete a task press and hold the delete button.",
     "settings": "You can change here your preferences. They will be automatically saved.",
     "newLesson": "Set the lesson's details, then save it.",
     "editLesson": "Edit the lesson's details, then save it.",

@@ -3,6 +3,7 @@ import { readFile, writeFile, existsSync } from 'fs';
 import { remote } from 'electron';
 import { BehaviorSubject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+import { Theme, light, dark } from '../../../assets/themes';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class DataService {
 
   app: any = remote.app;
+  sysPref: any = remote.systemPreferences;
+
   _isDataLoaded: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   data: object;
@@ -26,7 +29,7 @@ export class DataService {
 
   _language: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  darkMode: string;
+  darkMode: boolean;
   _darkMode: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(
@@ -69,6 +72,19 @@ export class DataService {
     this._currentLesson.subscribe((res: object) => {
       this.currentLesson = res;
     });
+
+    this._darkMode.subscribe((res: boolean) => {
+      this.darkMode = res;
+
+      let active: Theme = (this.darkMode ? dark : light);
+
+      Object.keys(active.properties).forEach(property => {
+        document.documentElement.style.setProperty(
+          property,
+          active.properties[property]
+        );
+      });
+    });
   }
 
   async readData() {
@@ -76,6 +92,7 @@ export class DataService {
       .then((res: string) => {
         this._data.next(JSON.parse(res));
         this._accentColor.next(JSON.parse(res)["accentColor"]);
+        this._darkMode.next(JSON.parse(res)["darkMode"]);
         this._language.next(JSON.parse(res)["language"]);
         this._currentWeek.next(JSON.parse(res)["currentWeek"]);
         this._isDataLoaded.next(true);

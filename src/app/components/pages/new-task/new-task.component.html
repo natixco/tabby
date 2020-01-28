@@ -3,7 +3,7 @@
     <h1 class="title" translate>TITLE.newTask</h1>
     <h2 class="subtitle" translate>SUBTITLE.newTask</h2>
   </div>
-  <div class="icon" routerLink="/">
+  <div class="icon" routerLink="/tasks">
     <i class="eva eva-close-outline"></i>
   </div>
 </div>
@@ -18,12 +18,12 @@
       </label>
       <input type="text" name="task" formControlName="task">
     </div>
-    <!-- <div class="input-container">
+    <div class="input-container">
       <label for="description" [ngClass]="{'input-invalid': form.description.touched && form.description.errors}">
         <span *ngIf="!form.description.touched || !form.description.errors" translate>NEWTASK.NORMAL.description</span>
       </label>
       <textarea type="text" name="description" formControlName="description"></textarea>
-    </div> -->
+    </div>
     <button class="btn btn-primary--accent" (click)="saveTask()" [disabled]="lessonForm.invalid" [ngClass]="{'btn-disabled': lessonForm.invalid}" translate>NEWTASK.button</button>
   </form>
 </div>
