@@ -32,91 +32,131 @@
     position: relative
     list-style: none
     width: 100%
-    height: 60px
-    border-bottom: 1px solid rgba(0,0,0,.1)
-    display: flex
-    flex-direction: row
-    align-items: center
-    justify-content: space-between
+    height: auto
+    border-bottom: 1px solid rgba(color(blackwhite),.1)
+    overflow: hidden
 
-    .left-side
+    .task-description
+      position: relative
+      height: 0
+      padding: 0 45px
+
+      p
+        color: rgba(color(text-two))
+        font-size: 16px
+        padding-bottom: 15px
+
+    .task-header
+      position: relative
+      width: 100%
+      height: 60px
       display: flex
       flex-direction: row
       align-items: center
+      justify-content: space-between
 
-      p
-        font-size: 18px
-        color: rgba(color(text-one))
-        margin-left: 20px
-
-      .checked
-        text-decoration: line-through
-
-      .task-checkbox
+      .left-side
         position: relative
-        width: 30px
-        height: 30px
-        border-radius: 50%
-        border: 1px solid rgba(0,0,0,.1)
+        height: 100%
+        width: calc(100% - 45px - 30px)
+        display: flex
+        flex-direction: row
+        align-items: center
 
-        input
+        .clickable
           position: absolute
-          top: 0
-          left: 0
-          width: 100%
           height: 100%
-          z-index: 999
-          opacity: 0
+          width: calc(100% - 45px)
+          left: 45px
+          z-index: 99
           cursor: pointer
-          &:checked ~ .task-custom-checkbox
-            background: color(accent)
+
+        .text
+          position: relative
+          height: 100%
+          width: 100%
+          margin-left: 15px
+          display: flex
+          flex-direction: row
+          align-items: center
+          overflow: hidden
+
+          p
+            font-size: 18px
+            text-overflow: ellipsis
+            white-space: nowrap
+            overflow: hidden
+            color: rgba(color(text-one))
+            margin-left: 0px
+
+        .checked
+          text-decoration: line-through
+
+        .task-checkbox
+          position: relative
+          width: 30px
+          height: 30px
+          border-radius: 50%
+          border: 1px solid rgba(color(blackwhite),.1)
+
+          input
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            z-index: 999
+            opacity: 0
+            cursor: pointer
+            &:checked ~ .task-custom-checkbox
+              background: color(accent)
+
+              i
+                opacity: 1
+
+          .task-custom-checkbox
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: transparent
+            border-radius: 50%
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
 
             i
-              opacity: 1
+              opacity: 0
+              font-size: 18px
+              color: white
 
-        .task-custom-checkbox
+      .delete-button
+        position: relative
+        width: 60px
+        height: 60px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        cursor: pointer
+        &:hover
+          i
+            opacity: 1
+            color: #fa5e62
+
+        i
+          opacity: .5
+          font-size: 20px
+          color: rgba(color(text-two))
+          transition: all .2s ease
+
+        .deletebg
           position: absolute
           top: 0
           left: 0
-          width: 100%
+          width: 0
           height: 100%
-          background: transparent
-          border-radius: 50%
-          display: flex
-          flex-direction: column
-          align-items: center
-          justify-content: center
-
-          i
-            opacity: 0
-            font-size: 18px
-            color: white
-
-    .delete-button
-      position: relative
-      width: 60px
-      height: 60px
-      display: flex
-      flex-direction: column
-      align-items: center
-      justify-content: center
-      cursor: pointer
-      &:hover
-        i
-          opacity: 1
-          color: #fa5e62
-
-      i
-        opacity: .5
-        font-size: 20px
-        color: rgba(color(text-two))
-        transition: all .2s ease
-
-      .deletebg
-        position: absolute
-        top: 0
-        left: 0
-        width: 0
-        height: 100%
-        background: rgba(#fa5e62,.1)
-        transition: all .1s ease
+          background: rgba(#fa5e62,.1)
+          transition: all .1s ease

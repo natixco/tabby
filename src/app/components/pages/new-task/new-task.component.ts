@@ -17,7 +17,8 @@ export class NewTaskComponent implements OnInit {
     private _Router: Router
   ) {
     this.lessonForm = new FormGroup({
-      task: new FormControl('', Validators.required)
+      task: new FormControl('', Validators.required),
+      description: new FormControl('', Validators.required)
     })
   }
 
@@ -30,6 +31,7 @@ export class NewTaskComponent implements OnInit {
   }
 
   saveTask() {
+    alert(this.lessonForm.value)
     this._TaskService.saveTask(this.lessonForm.value);
     this._Router.navigate(['/tasks']);
   }

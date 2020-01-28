@@ -29,4 +29,17 @@ export class TasksComponent implements OnInit {
     }
   }
 
+  openTask(event) {
+    let text: HTMLElement = event;
+    let leftSide: HTMLElement = text.parentElement;
+    let header: HTMLElement = leftSide.parentElement;
+    let task: HTMLElement = header.parentElement;
+    let description: HTMLElement = task.querySelector('.task-description');
+    if(description.offsetHeight > 0) {
+      description.style.height = '0px';
+    } else {
+      description.style.height = '100%';
+    }
+  }
+
 }
