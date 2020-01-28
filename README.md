@@ -1,5 +1,5 @@
 ## Introduction
-Simple, beautiful timetable application to track your school schedule. You can even add now tasks, change theme and change language.
+Simple, beautiful timetable application to track your school schedule. You can add tasks, change theme with available dark mode and change language.
 Made by me and KDani-99. We used this bootstrap to make it https://github.com/maximegris/angular-electron.
 
 To use it, just download the latest version from the releases and run it. (Available for Windows and Mac)
