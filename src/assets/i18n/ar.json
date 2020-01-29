@@ -1,0 +1,79 @@
+{
+  "TITLE": {
+    "timetable": "Calendario",
+    "tasks": "Tareas",
+    "settings": "Ajustes",
+    "newLesson": "Agregar clase",
+    "editLesson": "Editar clase",
+    "newTask": "Agregar tarea"
+  },
+  "SUBTITLE": {
+    "timetable": "Acá vas a poder ver tu resumen semanal. Para editar o borrar, hacé click derecho.",
+    "tasks": "Acá podés ver tus tareas. Para borrar una tarea mantené presionado el boton de borrar.",
+    "settings": "Acá podes cambiar tus preferencias. Se guardan automáticamente.",
+    "newLesson": "Ingresa los detalles de la clase, luego guardalos",
+    "editLesson": "Editá los detalles de la clase, después guardalos.",
+    "newTask": "Ingresa la tarea, luego guardala."
+  },
+  "SETTINGS": {
+    "language": "Idioma",
+    "week": "Semana actual",
+    "THEME": {
+      "theme": "Tema",
+      "darkMode": "Modo oscuro",
+      "mainColor": "Color principal"
+    }
+  },
+  "TIMETABLE": {
+    "title": "Tu calendario está vacío.",
+    "subtitle": "Agrega una nueva clase con el botón superior derecho."
+  },
+  "TASKS": {
+    "title": "No tenés ninguna tarea.",
+    "subtitle": "Agrega una nueva tarea con el botón superior derecho."
+  },
+  "NEWLESSON": {
+    "newButton": "Guardar y agregar clase",
+    "editButton": "Guardar clase",
+    "NORMAL": {
+      "start_time": "Comienza",
+      "finish_time": "Finaliza",
+      "lesson_name": "Nombre de la clase",
+      "teacher_name": "Nombre del profesor/a (Opcional)",
+      "class_room": "Aula (Opcional)",
+      "week": "Semana",
+      "day": "Día"
+    },
+    "ERROR": {
+      "start_time": "Ingresa cuándo comienza.",
+      "finish_time": "Ingresa cuándo finaliza",
+      "lesson_name": "El nombre de la clase es requerido",
+      "lesson_name_maxlength": "El nombre de la clase no puede contener más de 45 caracteres.",
+      "week": "La semana es requerida.",
+      "day": "El día es requerido"
+    }
+  },
+  "NEWTASK": {
+    "button": "Guardar y agregar tarea.",
+    "NORMAL": {
+      "task": "Tarea",
+      "description": "Descripción (optional)"
+    },
+    "ERROR": {
+      "task": "El título es requerido."
+    }
+  },
+  "DAYS": {
+    "monday": "Lunes",
+    "tuesday": "Martes",
+    "wednesday": "Miércoles",
+    "thursday": "Jueves",
+    "friday": "Viernes",
+    "saturday": "Sábado",
+    "sunday": "Domingo"
+  },
+  "CONTEXTMENU": {
+    "delete": "Presiona y mantén para eliminar.",
+    "edit": "Clickea para editar"
+  }
+}
