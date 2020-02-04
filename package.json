@@ -6,7 +6,12 @@
     "name": "Natixco & KDani"
   },
   "keywords": [
-    "timetable", "schedule", "school", "learning", "time", "management"
+    "timetable",
+    "schedule",
+    "school",
+    "learning",
+    "time",
+    "management"
   ],
   "main": "main.js",
   "private": true,
