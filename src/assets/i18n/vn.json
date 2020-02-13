@@ -1,0 +1,79 @@
+{
+  "TITLE": {
+    "timetable": "Thời gian biểu",
+    "tasks": "Nhiệm vụ",
+    "settings": "Cài đặt",
+    "newLesson": "Thêm buổi học",
+    "editLesson": "Sửa buổi học",
+    "newTask": "Thêm nhiệm vụ"
+  },
+  "SUBTITLE": {
+    "timetable": "Ở đây bạn có thể xem lịch trình hàng tuần của bạn. Nhấp chuột phải vào các buổi học để sửa hoặc xóa chúng.",
+    "tasks": "Ở đây bạn có thể thấy nhiệm vụ của bạn. Để xóa một nhiệm vụ bấm và giữ nút Xóa.",
+    "settings": "Bạn có thể thay đổi cài đặt của bạn ở đây. Chúng sẽ tự động lưu lại",
+    "newLesson": "Thêm chi tiết của buổi học, sau đó lưu lại.",
+    "editLesson": "Sửa chi tiết của buổi học, sau đó lưu lại.",
+    "newTask": "Thêm nhiệm vụ, sau đó lưu lại."
+  },
+  "SETTINGS": {
+    "language": "Ngôn ngữ",
+    "week": "Tuần này",
+    "THEME": {
+      "theme": "Chủ đề",
+      "darkMode": "Chế độ Ban đêm",
+      "mainColor": "Màu chủ đạo"
+    }
+  },
+  "TIMETABLE": {
+    "title": "Thời gian biểu của bạn đang trống",
+    "subtitle": "Bắt đầu bằng cách thêm một buổi học mới với nút ở góc trên bên phải."
+  },
+  "TASKS": {
+    "title": "Bạn không có nhiệm vụ ngay bây giờ",
+    "subtitle": "Bắt đầu bằng cách thêm một nhiệm vụ mới với nút ở góc trên cùng bên phải."
+  },
+  "NEWLESSON": {
+    "newButton": "Lưu và thêm buổi học",
+    "editButton": "Lưu buổi học",
+    "NORMAL": {
+      "start_time": "Thời gian bắt đầu",
+      "finish_time": "Thời gian kết thúc",
+      "lesson_name": "Tên buổi học",
+      "teacher_name": "Tên giáo viên (tùy chọn)",
+      "class_room": "Phòng học (tùy chọn)",
+      "week": "Tuần",
+      "day": "Ngày"
+    },
+    "ERROR": {
+      "start_time": "Thời gian bắt đầu là bắt buộc.",
+      "finish_time": "Thời gian kết thúc là bắt buộc.",
+      "lesson_name": "Tên buổi học là bắt buộc.",
+      "lesson_name_maxlength": "Tên buổi học không thể dài hơn 45 ký tự.",
+      "week": "Tuần là bắt buộc.",
+      "day": "Ngày là bắt buộc."
+    }
+  },
+  "NEWTASK": {
+    "button": "Lưu và thêm nhiệm vụ",
+    "NORMAL": {
+      "task": "Nhiệm vụ",
+      "description": "Miêu tả (tùy chọn)"
+    },
+    "ERROR": {
+      "task": "Tiêu đề là bắt buộc."
+    }
+  },
+  "DAYS": {
+    "monday": "Thứ Hai",
+    "tuesday": "Thứ Ba",
+    "wednesday": "Thứ Tư",
+    "thursday": "Thứ Năm",
+    "friday": "Thứ Sáu",
+    "saturday": "Thứ Bảy",
+    "sunday": "Chủ Nhật"
+  },
+  "CONTEXTMENU": {
+    "delete": "Nhấn và giữ để xóa",
+    "edit": "Bấm vào để chỉnh sửa"
+  }
+}
