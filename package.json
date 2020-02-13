@@ -1,12 +1,17 @@
 {
   "name": "tabby",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Simple desktop timetable app.",
   "author": {
     "name": "Natixco & KDani"
   },
   "keywords": [
-    "timetable", "schedule", "school", "learning", "time", "management"
+    "timetable",
+    "schedule",
+    "school",
+    "learning",
+    "time",
+    "management"
   ],
   "main": "main.js",
   "private": true,
