@@ -1,0 +1,79 @@
+{
+  "TITLE": {
+    "timetable": "Emploi du temps",
+    "tasks": "Tâches",
+    "settings": "Réglages",
+    "newLesson": "Ajouter un cours",
+    "editLesson": "Modifier le cours",
+    "newTask": "Ajouter une tâche"
+  },
+  "SUBTITLE": {
+    "timetable": "Ceci est votre emploi du temps. Faites un clic droit sur un cours pour le modifier ou le supprimer.",
+    "tasks": "Ceci est votre liste de tâches. Pour supprimer une tâche cliquez et maintenez le bouton de suppression.",
+    "settings": "Vous pouvez ici changer vos préférences. Elles sont automatiquement sauvegardées.",
+    "newLesson": "Saisissez les infos du cours, puis sauvegardez-le.",
+    "editLesson": "Modifiez les infos du cours, puis sauvegardez-le.",
+    "newTask": "Saisissez la tâche, puis sauvegardez-la."
+  },
+  "SETTINGS": {
+    "language": "Langue",
+    "week": "Semaine actuelle",
+    "THEME": {
+      "theme": "Thème",
+      "darkMode": "Mode sombre",
+      "mainColor": "Couleur principale"
+    }
+  },
+  "TIMETABLE": {
+    "title": "Votre emploi du temps est actuellement vide.",
+    "subtitle": "Commencez par ajouter un cours avec le bouton en haut à droite."
+  },
+  "TASKS": {
+    "title": "Vous n'avez pas de tâches pour le moment.",
+    "subtitle": "Commencez par en ajouter une avec le bouton en haut à droite."
+  },
+  "NEWLESSON": {
+    "newButton": "Sauvegarder et ajouter le cours",
+    "editButton": "Sauvegarder le cours",
+    "NORMAL": {
+      "start_time": "Heure de début",
+      "finish_time": "Heure de fin",
+      "lesson_name": "Nom du cours",
+      "teacher_name": "Nom du professeur (facultatif)",
+      "class_room": "Salle (facultatif)",
+      "week": "Semaine",
+      "day": "Jour"
+    },
+    "ERROR": {
+      "start_time": "L'heure de début est nécessaire.",
+      "finish_time": "L'heure de fin est nécessaire",
+      "lesson_name": "Le nom du cours est requis.",
+      "lesson_name_maxlength": "Le nom du cours ne doit pas excéder 45 caractères.",
+      "week": "La semaine est requise.",
+      "day": "Le jour est requis."
+    }
+  },
+  "NEWTASK": {
+    "button": "Sauvegarder et ajouter la tâche.",
+    "NORMAL": {
+      "task": "Tâche",
+      "description": "Description optionnelle"
+    },
+    "ERROR": {
+      "task": "Le titre est requis."
+    }
+  },
+  "DAYS": {
+    "monday": "Lundi",
+    "tuesday": "Mardi",
+    "wednesday": "Mercredi",
+    "thursday": "Jeudi",
+    "friday": "Vendredi",
+    "saturday": "Samedi",
+    "sunday": "Dimanche"
+  },
+  "CONTEXTMENU": {
+    "delete": "Supprimer (cliquez et maintenez)",
+    "edit": "Modifier"
+  }
+}
