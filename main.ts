@@ -4,7 +4,7 @@ import * as url from 'url';
 
 let win: BrowserWindow = null;
 const args = process.argv.slice(1),
-  serve = args.some(val => val === '--serve');
+    serve = args.some(val => val === '--serve');
 
 function createWindow(): BrowserWindow {
 
@@ -19,9 +19,7 @@ function createWindow(): BrowserWindow {
     },
   });
 
-  if (process.platform !== 'darwin') {
-    Menu.setApplicationMenu(null);
-  }
+  Menu.setApplicationMenu(null);
 
   if (serve) {
     require('electron-reload')(__dirname, {
@@ -60,4 +58,4 @@ try {
     }
   });
 
-} catch (e) { }
+} catch (e) {}
