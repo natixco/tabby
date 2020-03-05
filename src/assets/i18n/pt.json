@@ -1,0 +1,79 @@
+{
+  "TITLE": {
+    "timetable": "Calendário",
+    "tasks": "Tarefas",
+    "settings": "Configurações",
+    "newLesson": "Adicionar aula",
+    "editLesson": "Editar aula",
+    "newTask": "Adicionar tarefa"
+  },
+  "SUBTITLE": {
+    "timetable": "Aqui você pode ver o seu cronograma semanal. Clique com o botão direito nas aula para editar ou excluir.",
+    "tasks": "Aqui você pode ver suas tarefas. Para excluir uma tarefa clique e segure o botão de excluir.",
+    "settings": "Aqui você pode mudar suas preferências. Elas serão salvas automaticamente.",
+    "newLesson": "Defina os detalhes da aula e depois salve.",
+    "editLesson": "Edite os detalhes da aula e depois salve.",
+    "newTask": "Defina a tarefa e depois salve."
+  },
+  "SETTINGS": {
+    "language": "Idioma",
+    "week": "Essa semana",
+    "THEME": {
+      "theme": "Tema",
+      "darkMode": "Modo escuro",
+      "mainColor": "Cor principal"
+    }
+  },
+  "TIMETABLE": {
+    "title": "Seu calendário está vazio",
+    "subtitle": "Adicione uma aula clicando no botão do canto superior direito."
+  },
+  "TASKS": {
+    "title": "Você não tem tarefas",
+    "subtitle": "Adicione uma tarefa clicando no botão do canto superior direito."
+  },
+  "NEWLESSON": {
+    "newButton": "Salvar e adicionar aula",
+    "editButton": "Salvar aula",
+    "NORMAL": {
+      "start_time": "Início",
+      "finish_time": "Fim",
+      "lesson_name": "Nome da aula",
+      "teacher_name": "Nome do professor(a) (opcional)",
+      "class_room": "Sala (opcional)",
+      "week": "Semana",
+      "day": "Dia"
+    },
+    "ERROR": {
+      "start_time": "Indique a hora de início.",
+      "finish_time": "Indique a hora de fim.",
+      "lesson_name": "Indique o nome da aula.",
+      "lesson_name_maxlength": "O nome da aula não pode ter mais de 45 caracteres.",
+      "week": "Indique a semana.",
+      "day": "Indique o dia."
+    }
+  },
+  "NEWTASK": {
+    "button": "Salvar e adicionar tarefa,
+    "NORMAL": {
+      "task": "Tarefa",
+      "description": "Descrição (opcional)"
+    },
+    "ERROR": {
+      "task": "Indique o título."
+    }
+  },
+  "DAYS": {
+    "monday": "Segunda",
+    "tuesday": "Terça",
+    "wednesday": "Quarta",
+    "thursday": "Quinta",
+    "friday": "Sexta",
+    "saturday": "Sábado",
+    "sunday": "Domingo"
+  },
+  "CONTEXTMENU": {
+    "delete": "Clique e segure para excluir",
+    "edit": "Clique para editar"
+  }
+}
