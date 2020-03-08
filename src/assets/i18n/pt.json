@@ -1,0 +1,79 @@
+{
+  "TITLE": {
+    "timetable": "Calendário",
+    "tasks": "Tarefas",
+    "settings": "Configurações",
+    "newLesson": "Nova lição",
+    "editLesson": "Editar lição",
+    "newTask": "Nova tarefa"
+  },
+  "SUBTITLE": {
+    "timetable": "Aqui você pode ver sua programação semanal. Clique com o botão direito do mouse nas lições para editá-las ou excluí-las.",
+    "tasks": "Aqui você pode ver suas tarefas. Para excluir uma tarefa, mantenha pressionado o botão excluir.",
+    "settings": "Você pode alterar aqui suas preferências. Eles serão salvos automaticamente.",
+    "newLesson": "Defina os detalhes da lição e salve.",
+    "editLesson": "Edite os detalhes da lição e salve.",
+    "newTask": "Defina a tarefa e salve."
+  },
+  "SETTINGS": {
+    "language": "Língua",
+    "week": "Semana atual",
+    "THEME": {
+      "theme": "Tema",
+      "darkMode": "Modo escuro",
+      "mainColor": "Cor principal"
+    }
+  },
+  "TIMETABLE": {
+    "title": "Seu calendário está vazio agora",
+    "subtitle": "Comece adicionando uma nova lição com o botão no canto superior direito."
+  },
+  "TASKS": {
+    "title": "Você não tem tarefas no momento",
+    "subtitle": "Comece adicionando uma nova tarefa com o botão no canto superior direito."
+  },
+  "NEWLESSON": {
+    "newButton": "Salvar e adicionar lição",
+    "editButton": "Salvar lição",
+    "NORMAL": {
+      "start_time": "Hora de início",
+      "finish_time": "Hora de conclusão",
+      "lesson_name": "Nome da lição",
+      "teacher_name": "Nome do(a) professor(a) (opcional)",
+      "class_room": "Sala de aula (opcional)",
+      "week": "Semana",
+      "day": "Dia"
+    },
+    "ERROR": {
+      "start_time": "Hora de início é obrigatória.",
+      "finish_time": "Hora de conclusão é obrigatória.",
+      "lesson_name": "O nome da lição é obrigatório.",
+      "lesson_name_maxlength": "O nome da lição não pode ter mais de 45 caracteres.",
+      "week": "Semana é obrigatória.",
+      "day": "Dia é obrigatório."
+    }
+  },
+  "NEWTASK": {
+    "button": "Salvar e adicionar tarefa",
+    "NORMAL": {
+      "task": "Tarefa",
+      "description": "Descrição (opcional)"
+    },
+    "ERROR": {
+      "task": "Título é obrigatório."
+    }
+  },
+  "DAYS": {
+    "monday": "Segunda",
+    "tuesday": "Terça",
+    "wednesday": "Quarta",
+    "thursday": "Quinta",
+    "friday": "Sexta",
+    "saturday": "Sábado",
+    "sunday": "Domingo"
+  },
+  "CONTEXTMENU": {
+    "delete": "Pressione e segure para excluir",
+    "edit": "Clique para editar"
+  }
+}
