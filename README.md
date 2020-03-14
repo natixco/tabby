@@ -1,5 +1,5 @@
 ## About
-Simple, beautiful timetable application to track your school schedule. You can add tasks, change theme with available dark mode and choose language (english, hungarian, german, spanish).
+Simple, beautiful timetable application to track your school schedule. You can add tasks, change theme with available dark mode and choose language (English, Hungarian, German, Argentinian Spanish, French, Vietnamese, Brazilian Portuguese, Simplified Chinese).
 Made by me and KDani-99. We used this bootstrap to make it https://github.com/maximegris/angular-electron.
 
 To use it, just download the latest version from the releases and run it.
@@ -14,7 +14,7 @@ Android & iOS version: https://github.com/KDani-99/tabby-native
 ![Screenshot 3](/src/screenshots/3.png)
 
 ## Translation
-**Currently available languages**: english, hungarian, german and spanish
+**Currently available languages**: English, Hungarian, German, Argentinian Spanish, French, Vietnamese, Brazilian Portuguese, Simplified Chinese.
 
 If you would like to make your language available please follow the instructions below.
  1. Navigate to **src/assets/i18n** and find the ***en.json*** file
