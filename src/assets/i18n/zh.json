@@ -1,0 +1,79 @@
+{
+  "TITLE": {
+    "timetable": "课程表",
+    "tasks": "待办事项",
+    "settings": "设置",
+    "newLesson": "添加课程",
+    "editLesson": "编辑",
+    "newTask": "添加待办"
+  },
+  "SUBTITLE": {
+    "timetable": "这是你的一周时间表。右键课程卡片来修改或删除它。",
+    "tasks": "这是你当前的待办事项。长按垃圾桶键删除。",
+    "settings": "这是设置界面。设置项将会被自动保存。",
+    "newLesson": "添加课程详情，然后保存。",
+    "editLesson": "编辑课程详情，然后保存。",
+    "newTask": "添加待办详情，然后保存。"
+  },
+  "SETTINGS": {
+    "language": "语言",
+    "week": "本周",
+    "THEME": {
+      "theme": "主题",
+      "darkMode": "暗黑模式",
+      "mainColor": "主色调"
+    }
+  },
+  "TIMETABLE": {
+    "title": "课程表空空如也",
+    "subtitle": "现在就添加课程吧！"
+  },
+  "TASKS": {
+    "title": "当前没有任务呢",
+    "subtitle": "看看有什么需要做的？"
+  },
+  "NEWLESSON": {
+    "newButton": "添加课程",
+    "editButton": "保存课程",
+    "NORMAL": {
+      "start_time": "上课时间",
+      "finish_time": "下课时间",
+      "lesson_name": "课程名称",
+      "teacher_name": "教师（可选）",
+      "class_room": "教室（可选）",
+      "week": "周",
+      "day": "天"
+    },
+    "ERROR": {
+      "start_time": "上课时间必须输入。",
+      "finish_time": "下课时间必须输入。",
+      "lesson_name": "课程名称必须输入。",
+      "lesson_name_maxlength": "课程名称不能超过45个字。",
+      "week": "必须选择是第几周。",
+      "day": "必须选择是第几天。"
+    }
+  },
+  "NEWTASK": {
+    "button": "保存并添加新待办事项。",
+    "NORMAL": {
+      "task": "待办名称",
+      "description": "描述（可选）"
+    },
+    "ERROR": {
+      "task": "名称必须输入。"
+    }
+  },
+  "DAYS": {
+    "monday": "星期一",
+    "tuesday": "星期二",
+    "wednesday": "星期三",
+    "thursday": "星期四",
+    "friday": "星期五",
+    "saturday": "星期六",
+    "sunday": "星期天"
+  },
+  "CONTEXTMENU": {
+    "delete": "长按删除",
+    "edit": "点击即可编辑"
+  }
+}
