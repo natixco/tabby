@@ -1,0 +1,79 @@
+{
+    "TITLE": {
+      "timetable": "Calendario",
+      "tasks": "Tareas",
+      "settings": "Ajustes",
+      "newLesson": "Nueva clase",
+      "editLesson": "Editar clase",
+      "newTask": "Nueva tarea"
+    },
+    "SUBTITLE": {
+      "timetable": "Aquí podrás ver tu horario semanal. Clic derecho sobre las clases para editarlas o borrarlas. ¡Es muy fácil!",
+      "tasks": "En este apartado podrás ver tus tareas. Para eliminar una tarea simplemente mantén presionado el botón de eliminar.",
+      "settings": "Aquí puedes cambiar tus preferencias. Serán guardadas automáticamente.",
+      "newLesson": "Llena los detalles de tu clase, luego haz clic en Guardar.",
+      "editLesson": "Edita los detalles de tu clase, luego haz clic en Guardar.",
+      "newTask": "Registra la tarea, luego haz clic en Guardar."
+    },
+    "SETTINGS": {
+      "language": "Idioma",
+      "week": "Semana actual",
+      "THEME": {
+        "theme": "Tema",
+        "darkMode": "Modo oscuro",
+        "mainColor": "Color principal"
+      }
+    },
+    "TIMETABLE": {
+      "title": "Tu caledario está vacío.",
+      "subtitle": "Intenta registrar una nueva clase con el botón superior derecho."
+    },
+    "TASKS": {
+      "title": "No tienes ninguna tarea por el momento",
+      "subtitle": "Intenta registrar una nueva tarea con el botón superior derecho."
+    },
+    "NEWLESSON": {
+      "newButton": "Guardar clase",
+      "editButton": "Guardar clase",
+      "NORMAL": {
+        "start_time": "¿A que hora inicia?",
+        "finish_time": "¿A que hora termina?",
+        "lesson_name": "Nombre de la clase",
+        "teacher_name": "Nombre del profesor/a (opcional)",
+        "class_room": "Aula (opcional)",
+        "week": "Semana",
+        "day": "Día"
+      },
+      "ERROR": {
+        "start_time": "La hora inicio es requerida :c",
+        "finish_time": "La hora de finalización es requerida :c",
+        "lesson_name": "El nombre de la clase es requerido :c",
+        "lesson_name_maxlength": "El nombre de la clase no puede ser mayor a 45 caracteres.",
+        "week": "La semana es requerida.",
+        "day": "El día es requerido."
+      }
+    },
+    "NEWTASK": {
+      "button": "Guardar tarea",
+      "NORMAL": {
+        "task": "Tarea",
+        "description": "Descripción (opcional)"
+      },
+      "ERROR": {
+        "task": "El nombre de la tarea es requerido."
+      }
+    },
+    "DAYS": {
+      "monday": "Lunes",
+      "tuesday": "Martes",
+      "wednesday": "Miércoles",
+      "thursday": "Jueves",
+      "friday": "Viernes",
+      "saturday": "Sábado",
+      "sunday": "Domingo"
+    },
+    "CONTEXTMENU": {
+      "delete": "Presiona y mantén para eliminar",
+      "edit": "Clic para editar"
+    }
+  }
