@@ -23,7 +23,5 @@ If you would like to make your language available please follow the instructions
  3. Copy the content of ***en.json*** to ***your_language_code.json*** and translate it.
  4. Make a fork of the repo, upload your translation and make a pull request or email us with the translation file and we will add it.
 
-## Bug & features
-There could be bugs in the app, so if you think something is wrong, open an issue ticket or email us.
-If you have any feature request or idea feel free to share with us the same way as you would do with a bug (issue ticker or email).
-Email address: natixco@outlook.com
+## Bugs
+If you think something is broken, open an issue ticket.
