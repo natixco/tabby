@@ -1,0 +1,79 @@
+{
+  "TITLE": {
+    "timetable": "Orario",
+    "tasks": "Attività",
+    "settings": "Impostazioni",
+    "newLesson": "Aggiungi nuova lezione",
+    "editLesson": "Modifica lezione",
+    "newTask": "Aggiungi nuova attività"
+  },
+  "SUBTITLE": {
+    "timetable": "Here you can see your weekly schedule. Fai tasto destro sulle lezioni per modificarle e eliminarle.",
+    "tasks": "Qui puoi vedere le tue attività. Per elimare un'attività tieni premuto il pulsante elimina.",
+    "settings": "Qui puoi cambiare le tue impostazioni. Verranno salvate automaticamente.",
+    "newLesson": "Imposta i dettagli della lezione, poi salvala.",
+    "editLesson": "Modifica i dettagli della lezione, poi salvala.",
+    "newTask": "Imposta l'attività, poi salvala."
+  },
+  "SETTINGS": {
+    "language": "Lingua",
+    "week": "Settimana corrente",
+    "THEME": {
+      "theme": "Tema",
+      "darkMode": "Modalità scura",
+      "mainColor": "Colore principale"
+    }
+  },
+  "TIMETABLE": {
+    "title": "Il tuo orario è vuoto al momento",
+    "subtitle": "Inizia aggiungendo una nuova lezione con il pulsante nell'angolo in alto a destra."
+  },
+  "TASKS": {
+    "title": "Non hai nessuna attività al momento",
+    "subtitle": "Inizia aggiungendo una nuova attività con il pulsante nell'angolo in alto a destra."
+  },
+  "NEWLESSON": {
+    "newButton": "Salva e aggiungi lezioni",
+    "editButton": "Salva lezione",
+    "NORMAL": {
+      "start_time": "Orario di inizio",
+      "finish_time": "Orario di fine",
+      "lesson_name": "Nome della lezione",
+      "teacher_name": "Nome dell'insegnante (opzionale)",
+      "class_room": "Aula (opzionale)",
+      "week": "Settimana",
+      "day": "Giorno"
+    },
+    "ERROR": {
+      "start_time": "L'orario di inizio è obbligatorio.",
+      "finish_time": "L'orario di fine è obbligatorio.",
+      "lesson_name": "Il nome della lezione è obbligatorio.",
+      "lesson_name_maxlength": "Il nome della lezione non può essere più lungo di 45 caratteri.",
+      "week": "La settimana è obbligatoria.",
+      "day": "Il giorno è obbligatorio."
+    }
+  },
+  "NEWTASK": {
+    "button": "Salva e aggiungi attività",
+    "NORMAL": {
+      "task": "Attività",
+      "description": "Descrizione (opzionale)"
+    },
+    "ERROR": {
+      "task": "Il titolo è obbligatorio."
+    }
+  },
+  "DAYS": {
+    "monday": "Lunedì",
+    "tuesday": "Martedì",
+    "wednesday": "Mercoledì",
+    "thursday": "Giovedì",
+    "friday": "Venerdì",
+    "saturday": "Sabato",
+    "sunday": "Domenica"
+  },
+  "CONTEXTMENU": {
+    "delete": "Tieni premuto per eliminare",
+    "edit": "Premi per modificare"
+  }
+}
