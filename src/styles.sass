@@ -6,6 +6,16 @@
   font-family: 'Avenir-Bold'
   src: url('./assets/font/AvenirNextLTPro-Bold.otf') format('opentype')
 
+@font-face
+  font-family: 'Lato'
+  src: url('./assets/font/Lato-Regular.ttf') format('truetype')
+  unicode-range: U+0370-03FF
+
+@font-face
+  font-family: 'Lato-Bold'
+  src: url('./assets/font/Lato-Black.ttf') format('truetype')
+  unicode-range: U+0370-03FF
+
 @function color($color-name)
   @return var(--color-#{$color-name})
 
@@ -24,7 +34,7 @@
 *
   margin: 0
   padding: 0
-  font-family: 'Avenir'
+  font-family: 'Lato', 'Avenir', sans-serif
   user-select: none
   transition: all .4 ease
 
@@ -45,7 +55,7 @@ body
     margin-left: 50px
 
   .title, span
-    font-family: 'Avenir-Bold'
+    font-family: 'Lato-Bold', 'Avenir-Bold', sans-serif
     font-size: 30px
     color: rgba(color(text-one))
     margin-bottom: 5px
@@ -90,7 +100,7 @@ body
   font-weight: 400
   background: transparent
   text-align: center
-  overflow: hidden
+  overflow: visible
   transition: all .2s ease
   text-decoration: none
   display: block
