@@ -1,9 +1,9 @@
 {
   "name": "tabby",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Simple desktop timetable app.",
   "author": {
-    "name": "Natixco & KDani"
+    "name": "Natixco"
   },
   "keywords": [
     "timetable",
