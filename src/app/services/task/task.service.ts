@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DataService } from '../data/data.service';
+const markdown = require('markdown').markdown;
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class TaskService {
   saveTask(task: object) {
     let newData: object = this._DataService.data;
     task['checked'] = false;
+    task['description'] = markdown.toHTML(task['description']);
     newData['tasks'].push(task);
 
     this._DataService._data.next(newData);

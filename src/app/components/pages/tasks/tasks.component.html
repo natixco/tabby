@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="task-description">
-        <p *ngIf="task['description'] !== undefined">{{task['description']}}</p>
+        <p *ngIf="task['description'] !== undefined" [innerHTML]="task['description'] | safeHtml"></p>
       </div>
     </li>
   </ul>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '@services/data/data.service';
 import { TaskService } from '@services/task/task.service';
+import { shell} from 'electron';
 
 @Component({
   selector: 'app-tasks',
@@ -17,7 +18,18 @@ export class TasksComponent implements OnInit {
     private _TaskService: TaskService
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+
+  }
+
+  ngAfterViewInit(): void {
+    let allLink = document.querySelectorAll('a');
+    allLink.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        shell.openExternal(item.href);
+      })
+    })
   }
 
   holdHandler(e, task: object) {
