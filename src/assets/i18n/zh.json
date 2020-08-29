@@ -5,7 +5,8 @@
     "settings": "设置",
     "newLesson": "添加课程",
     "editLesson": "编辑",
-    "newTask": "添加待办"
+    "newTask": "添加待办",
+    "editTask": "编辑任务"
   },
   "SUBTITLE": {
     "timetable": "这是你的一周时间表。右键课程卡片来修改或删除它。",

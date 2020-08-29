@@ -5,7 +5,8 @@
     "settings": "Impostazioni",
     "newLesson": "Aggiungi nuova lezione",
     "editLesson": "Modifica lezione",
-    "newTask": "Aggiungi nuova attività"
+    "newTask": "Aggiungi nuova attività",
+    "editTask": "Modifica attività"
   },
   "SUBTITLE": {
     "timetable": "Here you can see your weekly schedule. Fai tasto destro sulle lezioni per modificarle e eliminarle.",
