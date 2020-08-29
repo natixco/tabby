@@ -14,7 +14,7 @@ Android & iOS version: https://github.com/KDani-99/tabby-native
 ![Screenshot 3](/src/screenshots/3.png)
 
 ## Currently available languages
-English, Hungarian, German, Argentinian Spanish, French, Vietnamese, Brazilian Portuguese, Simplified Chinese, Korean, Russian
+English, Hungarian, German, Argentinian Spanish, French, Vietnamese, Brazilian Portuguese, Simplified Chinese, Korean, Russian and Ukrainian.
 
 ## Bugs
 If you think something is broken, open an issue ticket.
