@@ -3,8 +3,6 @@ import * as path from 'path';
 import * as url from 'url';
 
 let win: BrowserWindow = null;
-// let tray: Tray = null;
-// let close: boolean = false;
 
 const args = process.argv.slice(1),
   serve = args.some(val => val === '--serve');
@@ -38,36 +36,6 @@ function createWindow(): void {
       slashes: true
     }));
   }
-
-  // tray = new Tray(nativeImage.createFromPath(path.join(__dirname, 'dist/favicon.ico')));
-  // const contextMenu = Menu.buildFromTemplate([
-  //   {
-  //     label: 'Open',
-  //     type: 'normal',
-  //     click: function () {
-  //       win.show();
-  //     }
-  //   },
-  //   {
-  //     label: 'Exit',
-  //     type: 'normal',
-  //     click: function () {
-  //       close = true;
-  //       app.quit();
-  //     }
-  //   }
-  // ]);
-  // tray.setToolTip('Tabby');
-  // tray.setContextMenu(contextMenu);
-
-  // tray.on('double-click', () => {
-  //   win.show();
-  // });
-
-  // win.on('close', (event) => {
-  //   if (!close) event.preventDefault();
-  //   win.hide();
-  // });
 }
 
 try {

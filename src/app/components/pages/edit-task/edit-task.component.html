@@ -1,0 +1,29 @@
+<div class="header">
+  <div class="text">
+    <h1 class="title" translate>TITLE.editTask</h1>
+    <h2 class="subtitle" translate>SUBTITLE.newTask</h2>
+  </div>
+  <div class="icon" routerLink="/tasks">
+    <i class="eva eva-close-outline"></i>
+  </div>
+</div>
+<div class="container">
+  <form [formGroup]="lessonForm">
+    <div class="input-container">
+      <label for="task" [ngClass]="{'input-invalid': form.task.touched && form.task.errors}">
+        <span *ngIf="!form.task.touched || !form.task.errors" translate>NEWTASK.NORMAL.task</span>
+        <span *ngIf="form.task.touched && form.task.errors">
+          <span *ngIf="form.task.errors.required" translate>NEWTASK.ERROR.task</span>
+        </span>
+      </label>
+      <input type="text" name="task" formControlName="task">
+    </div>
+    <div class="input-container">
+      <label for="description" [ngClass]="{'input-invalid': form.description.touched && form.description.errors}">
+        <span *ngIf="!form.description.touched || !form.description.errors" translate>NEWTASK.NORMAL.description</span>
+      </label>
+      <textarea type="text" name="description" formControlName="description"></textarea>
+    </div>
+    <button class="btn btn-primary--accent" (click)="editTask()" [disabled]="lessonForm.invalid" [ngClass]="{'btn-disabled': lessonForm.invalid}" translate>NEWTASK.button</button>
+  </form>
+</div>

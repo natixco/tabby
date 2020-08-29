@@ -5,7 +5,8 @@
     "settings": "Settings",
     "newLesson": "Add new lesson",
     "editLesson": "Edit lesson",
-    "newTask": "Add new task"
+    "newTask": "Add new task",
+    "editTask": "Edit task"
   },
   "SUBTITLE": {
     "timetable": "Here you can see your weekly schedule. Right click on the lessons to edit or delete them.",

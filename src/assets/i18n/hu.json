@@ -5,7 +5,8 @@
     "settings": "Beállítások",
     "newLesson": "Új óra hozzáadása",
     "editLesson": "Óra szerkesztése",
-    "newTask": "Új feladat hozzáadása"
+    "newTask": "Új feladat hozzáadása",
+    "editTask": "Feladat szerkesztése"
   },
   "SUBTITLE": {
     "timetable": "Itt láthatod a heti óráidat. Óra szerkesztéséhez vagy törléséhez kattints a jobb egérgombbal az adott órára.",

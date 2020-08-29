@@ -132,31 +132,60 @@
               font-size: 18px
               color: white
 
-      .delete-button
+      .buttons
         position: relative
-        width: 60px
-        height: 60px
         display: flex
-        flex-direction: column
-        align-items: center
-        justify-content: center
-        cursor: pointer
-        &:hover
+        flex-direction: row
+
+        .button
+          position: relative
+          width: 60px
+          height: 60px
+          display: flex
+          flex-direction: column
+          align-items: center
+          justify-content: center
+          cursor: pointer
+
+        .delete-button
+          &:hover
+            i
+              opacity: 1
+              color: #fa5e62
+
           i
-            opacity: 1
-            color: #fa5e62
+            opacity: .5
+            font-size: 20px
+            color: rgba(color(text-two))
+            transition: all .2s ease
 
-        i
-          opacity: .5
-          font-size: 20px
-          color: rgba(color(text-two))
-          transition: all .2s ease
+          .deletebg
+            position: absolute
+            top: 0
+            left: 0
+            width: 0
+            height: 100%
+            background: rgba(#fa5e62,.1)
+            transition: all .1s ease
 
-        .deletebg
-          position: absolute
-          top: 0
-          left: 0
-          width: 0
-          height: 100%
-          background: rgba(#fa5e62,.1)
-          transition: all .1s ease
+        .edit-button
+          &:hover
+            i
+              opacity: 1
+              color: color(accent)
+
+          i
+            opacity: .5
+            font-size: 20px
+            color: rgba(color(text-two))
+            transition: all .2s ease
+
+          .editbg
+            position: absolute
+            top: 0
+            left: 0
+            width: 0
+            height: 100%
+            // background: rgba(#fa5e62,.1)
+            background: rgba(color(accent-rgb), .1)
+            transition: all .1s ease
