@@ -6,6 +6,7 @@ import { TasksComponent } from './components/pages/tasks/tasks.component';
 import { NewLessonComponent } from './components/pages/new-lesson/new-lesson.component';
 import { EditLessonComponent } from './components/pages/edit-lesson/edit-lesson.component';
 import { NewTaskComponent } from './components/pages/new-task/new-task.component';
+import { EditTaskComponent } from './components/pages/edit-task/edit-task.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'new-task',
     component: NewTaskComponent
+  },
+  {
+    path: 'edit-task',
+    component: EditTaskComponent
   }
 ];
 

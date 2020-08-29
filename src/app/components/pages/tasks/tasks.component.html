@@ -27,13 +27,18 @@
           </div>
           <div class="clickable" (click)="openTask($event.target)"></div>
         </div>
-        <div class="delete-button" appHoldDelete (holdTime)="holdHandler($event, task)">
-          <div class="deletebg" [ngStyle]="{'width': currentTask === task ? deleteProgress + '%' : 0 }"></div>
-          <i class="eva eva-trash-outline"></i>
+        <div class="buttons">
+          <div class="button edit-button" (click)="editTask(task)">
+            <i class="eva eva-edit-2-outline"></i>
+          </div>
+          <div class="button delete-button" appHoldDelete (holdTime)="holdHandler($event, task, 'delete')">
+            <div class="deletebg" [ngStyle]="{'width': currentTask === task ? deleteProgress + '%' : 0 }"></div>
+            <i class="eva eva-trash-outline"></i>
+          </div>
         </div>
       </div>
       <div class="task-description">
-        <p *ngIf="task['description'] !== undefined" [innerHTML]="task['description'] | safeHtml"></p>
+        <p *ngIf="task['description'] !== undefined" [innerHTML]="getFormattedDescription(task['description']) | safeHtml"></p>
       </div>
     </li>
   </ul>

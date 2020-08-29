@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '@services/data/data.service';
 import { TaskService } from '@services/task/task.service';
 import { shell} from 'electron';
+import { Router } from '@angular/router';
+const markdown = require('markdown').markdown;
 
 @Component({
   selector: 'app-tasks',
@@ -11,11 +13,13 @@ import { shell} from 'electron';
 export class TasksComponent implements OnInit {
 
   deleteProgress: number = 0;
+  editProgress: number = 0;
   currentTask: object;
 
   constructor(
     public _DataService: DataService,
-    private _TaskService: TaskService
+    private _TaskService: TaskService,
+    private _Router: Router
   ) { }
 
   ngOnInit(): void {
@@ -32,7 +36,7 @@ export class TasksComponent implements OnInit {
     })
   }
 
-  holdHandler(e, task: object) {
+  holdHandler(e, task: object, type: 'edit' | 'delete') {
     this.currentTask = task;
     this.deleteProgress = e / 10;
     if(this.deleteProgress > 100) {
@@ -52,6 +56,15 @@ export class TasksComponent implements OnInit {
     } else {
       description.style.height = '100%';
     }
+  }
+
+  editTask(task: object) {
+    this._TaskService._currentlyEditing.next(task);
+    this._Router.navigate(['/edit-task']);
+  }
+
+  getFormattedDescription(description: string) {
+    return markdown.toHTML(description);
   }
 
 }

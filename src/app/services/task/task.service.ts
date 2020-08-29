@@ -1,24 +1,43 @@
 import { Injectable } from '@angular/core';
 import { DataService } from '../data/data.service';
-const markdown = require('markdown').markdown;
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
 
+  currentlyEditing: object;
+  _currentlyEditing: BehaviorSubject<object> = new BehaviorSubject<object>({});
+
   constructor(
     private _DataService: DataService
-  ) { }
+  ) {
+    this._currentlyEditing.subscribe((res: object) => {
+      this.currentlyEditing = res;
+    });
+  }
 
   saveTask(task: object) {
     let newData: object = this._DataService.data;
     task['checked'] = false;
-    task['description'] = markdown.toHTML(task['description']);
     newData['tasks'].push(task);
 
     this._DataService._data.next(newData);
     this._DataService.writeData();
+  }
+
+  editTask(oldData: object, newData: object) {
+    let data: object = this._DataService.data;
+    data['tasks'].forEach((item, index) => {
+      if(item['task'] === oldData['task'] && item['description'] === oldData['description']) {
+        item['task'] = newData['task'];
+        item['description'] = newData['description'];
+        this._DataService._data.next(data);
+        this._DataService.writeData();
+        return;
+      }
+    });
   }
 
   deleteTask(task: object) {
