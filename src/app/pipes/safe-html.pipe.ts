@@ -9,7 +9,6 @@ export class SafeHtmlPipe implements PipeTransform {
   constructor(private _DomSanitizer: DomSanitizer) {}
 
   transform(value: string): SafeHtml {
-    console.log(this._DomSanitizer.bypassSecurityTrustHtml(value))
     return this._DomSanitizer.bypassSecurityTrustHtml(value)
   }
 
