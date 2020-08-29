@@ -54,13 +54,24 @@ export class TaskService {
 
   changeTaskChecked(task: object) {
     let newData: object = this._DataService.data;
-    newData['tasks'].forEach((item, index) => {
+    newData['tasks'].forEach(async (item, index) => {
       if(JSON.stringify(item) === JSON.stringify(task)) {
         newData['tasks'][index] = { task: task['task'], description: task['description'], checked: !task['checked']};
-        this._DataService._data.next(newData);
-        this._DataService.writeData();
+        this.changeOrder();
         return;
       }
     });
+  }
+
+  changeOrder() {
+    let newData: object = this._DataService.data;
+    newData['tasks'].forEach((item, index) => {
+      if(item['checked']) {
+        newData['tasks'].splice(index, 1);
+        newData['tasks'].push(item);
+      }
+    });
+    this._DataService._data.next(newData);
+    this._DataService.writeData();
   }
 }
