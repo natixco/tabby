@@ -5,7 +5,8 @@
     "settings": "Configurações",
     "newLesson": "Nova lição",
     "editLesson": "Editar lição",
-    "newTask": "Nova tarefa"
+    "newTask": "Nova tarefa",
+    "editTask": "Editar tarefa"
   },
   "SUBTITLE": {
     "timetable": "Aqui você pode ver sua programação semanal. Clique com o botão direito do mouse nas lições para editá-las ou excluí-las.",

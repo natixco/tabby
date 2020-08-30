@@ -5,7 +5,8 @@
       "settings": "Ajustes",
       "newLesson": "Nueva clase",
       "editLesson": "Editar clase",
-      "newTask": "Nueva tarea"
+      "newTask": "Nueva tarea",
+      "editTask": "Editar una tarea"
     },
     "SUBTITLE": {
       "timetable": "Aquí podrás ver tu horario semanal. Clic derecho sobre las clases para editarlas o borrarlas. ¡Es muy fácil!",
