@@ -5,7 +5,8 @@
     "settings": "Réglages",
     "newLesson": "Ajouter un cours",
     "editLesson": "Modifier le cours",
-    "newTask": "Ajouter une tâche"
+    "newTask": "Ajouter une tâche",
+    "editTask": "Modifier la tâche"
   },
   "SUBTITLE": {
     "timetable": "Ceci est votre emploi du temps. Faites un clic droit sur un cours pour le modifier ou le supprimer.",

@@ -5,7 +5,8 @@
     "settings": "Ajustes",
     "newLesson": "Agregar clase",
     "editLesson": "Editar clase",
-    "newTask": "Agregar tarea"
+    "newTask": "Agregar tarea",
+    "editTask": "Editar una tarea"
   },
   "SUBTITLE": {
     "timetable": "Acá vas a poder ver tu resumen semanal. Para editar o borrar, hacé click derecho.",

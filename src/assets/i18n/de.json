@@ -5,7 +5,8 @@
     "settings": "Einstellungen",
     "newLesson": "Neue Lektion hinzufügen",
     "editLesson": "Lektion bearbeiten",
-    "newTask": "Neue Aufgabe hinzufügen"
+    "newTask": "Neue Aufgabe hinzufügen",
+    "editTask": "Aufgabe bearbeiten"
   },
   "SUBTITLE": {
     "timetable": "Hier können Sie Ihren Stundenplan ansehen.",

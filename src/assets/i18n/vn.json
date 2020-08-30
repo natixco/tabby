@@ -5,7 +5,8 @@
     "settings": "Cài đặt",
     "newLesson": "Thêm buổi học",
     "editLesson": "Sửa buổi học",
-    "newTask": "Thêm nhiệm vụ"
+    "newTask": "Thêm nhiệm vụ",
+    "editTask": "Chỉnh sửa công việc"
   },
   "SUBTITLE": {
     "timetable": "Ở đây bạn có thể xem lịch trình hàng tuần của bạn. Nhấp chuột phải vào các buổi học để sửa hoặc xóa chúng.",
