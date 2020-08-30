@@ -22,9 +22,8 @@ export class TaskService {
     let newData: object = this._DataService.data;
     task['checked'] = false;
     newData['tasks'].push(task);
-
     this._DataService._data.next(newData);
-    this._DataService.writeData();
+    this.changeOrder();
   }
 
   editTask(oldData: object, newData: object) {
@@ -65,12 +64,14 @@ export class TaskService {
 
   changeOrder() {
     let newData: object = this._DataService.data;
+    let completed: object[] = [];
+    let notCompleted: object[] = [];
+
     newData['tasks'].forEach((item, index) => {
-      if(item['checked']) {
-        newData['tasks'].splice(index, 1);
-        newData['tasks'].push(item);
-      }
+      item['checked'] ? completed.push(item) : notCompleted.push(item);
     });
+
+    newData['tasks'] = [...notCompleted, ...completed];
     this._DataService._data.next(newData);
     this._DataService.writeData();
   }
