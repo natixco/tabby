@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Menu } from 'electron';
+import { app, BrowserWindow, Menu, ipcMain, dialog } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
@@ -23,6 +23,8 @@ function createWindow(): void {
   if (process.platform !== 'darwin') {
     Menu.setApplicationMenu(null);
   }
+
+  win.webContents.openDevTools();
 
   if (serve) {
     require('electron-reload')(__dirname, {
@@ -54,3 +56,17 @@ try {
   });
 
 } catch (e) { }
+
+ipcMain.on('export', async (event, arg) => {
+  const result = await dialog.showOpenDialog({
+    properties: ['openDirectory', 'createDirectory']
+  });
+  event.reply('export-reply', result);
+});
+
+ipcMain.on('import', async (event, arg) => {
+  const result = await dialog.showOpenDialog({
+    properties: ['openFile']
+  });
+  event.reply('import-reply', result);
+});
