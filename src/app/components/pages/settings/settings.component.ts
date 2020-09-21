@@ -94,16 +94,8 @@ export class SettingsComponent implements OnInit {
   }
 
   changeTheme() {
-    // this.active = (this.darkMode ? dark : light);
-    // this.darkMode = !this.darkMode;
     this._DataService.changeData("darkMode", !this.darkMode);
     this._DataService._darkMode.next(!this.darkMode);
-    // Object.keys(this.active.properties).forEach(property => {
-    //   document.documentElement.style.setProperty(
-    //     property,
-    //     this.active.properties[property]
-    //   );
-    // });
   }
 
   changeCurrentWeek(week: string) {
