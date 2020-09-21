@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef  } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { DataService } from '@services/data/data.service';
+import { ipcRenderer } from 'electron';
 
 @Component({
   selector: 'app-settings',
@@ -14,15 +15,59 @@ export class SettingsComponent implements OnInit {
   weeks: string[];
   objKeys = Object.keys;
   currentWeek: string;
+  showErrorText: boolean;
+  showExportText: boolean;
+  showImportText: boolean;
 
   constructor(
     private _TranslateService: TranslateService,
-    public _DataService: DataService
-  ) {}
+    public _DataService: DataService,
+    private ref: ChangeDetectorRef
+  ) {
+    ipcRenderer.on('export-reply', (_, arg: object) => this._export(_, arg))
+    ipcRenderer.on('import-reply', (_, arg: object) => this._import(_, arg))
+  }
+
+  async _export(_, arg: object) {
+    if(!arg) return;
+    if(arg['canceled']) return;
+
+    await this._DataService.copyData(this._DataService.getDataPath(), arg['filePaths'][0] + '/data.json')
+      .then(() => {
+        this.showExportText = true;
+        this.showImportText = false;
+        this.showErrorText = false;
+      })
+      .catch(() => {
+        this.showErrorText = true;
+        this.showExportText = false;
+        this.showImportText = false;
+      });
+
+    this.ref.detectChanges();
+  }
+
+  async _import(_, arg: object) {
+    if(!arg) return;
+    if(arg['canceled']) return;
+
+    await this._DataService.copyData(arg['filePaths'][0], this._DataService.getDataPath())
+      .then(() => {
+        this.showImportText = true;
+        this.showExportText = false;
+        this.showErrorText = false;
+      })
+      .catch(() => {
+        this.showErrorText = true;
+        this.showExportText = false;
+        this.showImportText = false;
+      });
+
+    this.ref.detectChanges();
+    this._DataService.readData();
+  }
 
   ngOnInit() {
-    this.weeks = Object.keys(this._DataService.data['weeks']);
-
     this._DataService._accentColor.subscribe((color: string) => {
       this.accentColor = color;
     });
@@ -34,6 +79,8 @@ export class SettingsComponent implements OnInit {
     this._DataService._currentWeek.subscribe((res: string) => {
       this.currentWeek = res;
     });
+
+    this.weeks = Object.keys(this._DataService.data['weeks']);
   }
 
   changeLanguage(lang: string) {
@@ -47,16 +94,8 @@ export class SettingsComponent implements OnInit {
   }
 
   changeTheme() {
-    // this.active = (this.darkMode ? dark : light);
-    // this.darkMode = !this.darkMode;
     this._DataService.changeData("darkMode", !this.darkMode);
     this._DataService._darkMode.next(!this.darkMode);
-    // Object.keys(this.active.properties).forEach(property => {
-    //   document.documentElement.style.setProperty(
-    //     property,
-    //     this.active.properties[property]
-    //   );
-    // });
   }
 
   changeCurrentWeek(week: string) {
@@ -70,6 +109,14 @@ export class SettingsComponent implements OnInit {
 
   getCurrentLang(): string {
     return this._TranslateService.currentLang;
+  }
+
+  importData(): void {
+    ipcRenderer.send('import');
+  }
+
+  exportData(): void {
+    ipcRenderer.send('export');
   }
 
 }

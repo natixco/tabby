@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { readFile, writeFile, existsSync } from 'fs';
+import { readFile, writeFile, existsSync, copyFile } from 'fs';
 import { remote } from 'electron';
 import { BehaviorSubject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
@@ -153,5 +153,18 @@ export class DataService {
     newData[property] = value;
     this._data.next(newData);
     this.writeData();
+  }
+
+  copyData(fromPath: string, outputPath: string): any {
+    return new Promise(async (resolve, reject) => {
+      await copyFile(fromPath, outputPath, (err) => {
+        if (err) reject();
+        resolve();
+      });
+    })
+  }
+
+  getDataPath(): string {
+    return this.app.getPath('userData') + '/data.json';
   }
 }

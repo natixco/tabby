@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Menu } from 'electron';
+import { app, BrowserWindow, Menu, ipcMain, dialog } from 'electron';
 import * as path from 'path';
 import * as url from 'url';
 
@@ -54,3 +54,17 @@ try {
   });
 
 } catch (e) { }
+
+ipcMain.on('export', async (event, arg) => {
+  const result = await dialog.showOpenDialog({
+    properties: ['openDirectory', 'createDirectory']
+  });
+  event.reply('export-reply', result);
+});
+
+ipcMain.on('import', async (event, arg) => {
+  const result = await dialog.showOpenDialog({
+    properties: ['openFile']
+  });
+  event.reply('import-reply', result);
+});

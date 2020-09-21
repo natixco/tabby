@@ -65,5 +65,15 @@
         </div>
       </div>
     </li>
+    <li>
+      <h1 class="title">Data</h1>
+      <div class="buttons">
+        <button class="btn btn-secondary--accent" (click)="importData()">Import</button>
+        <button class="btn btn-secondary--accent" (click)="exportData()">Export</button>
+      </div>
+      <p class="status status-error" *ngIf="showErrorText">An error has occured!</p>
+      <p class="status" *ngIf="showExportText">The data was successfully exported!</p>
+      <p class="status" *ngIf="showImportText">The data was successfully imported!</p>
+    </li>
   </ul>
 </div>
