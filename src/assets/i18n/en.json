@@ -23,6 +23,14 @@
       "theme": "Theme",
       "darkMode": "Dark mode",
       "mainColor": "Main color"
+    },
+    "DATA": {
+      "data": "Data",
+      "error": "An error has occured!",
+      "exportSuccess": "The data was successfully exported!",
+      "importSuccess": "The data was successfully imported!",
+      "export": "Export",
+      "import": "Import"
     }
   },
   "TIMETABLE": {
