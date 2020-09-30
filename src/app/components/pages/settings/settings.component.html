@@ -66,14 +66,14 @@
       </div>
     </li>
     <li>
-      <h1 class="title">Data</h1>
+      <h1 class="title" translate>SETTINGS.DATA.data</h1>
       <div class="buttons">
-        <button class="btn btn-secondary--accent" (click)="importData()">Import</button>
-        <button class="btn btn-secondary--accent" (click)="exportData()">Export</button>
+        <button class="btn btn-secondary--accent" (click)="importData()" translate>SETTINGS.DATA.import</button>
+        <button class="btn btn-secondary--accent" (click)="exportData()" translate>SETTINGS.DATA.export</button>
       </div>
-      <p class="status status-error" *ngIf="showErrorText">An error has occured!</p>
-      <p class="status" *ngIf="showExportText">The data was successfully exported!</p>
-      <p class="status" *ngIf="showImportText">The data was successfully imported!</p>
+      <p class="status status-error" *ngIf="showErrorText" translate>SETTINGS.DATA.error</p>
+      <p class="status" *ngIf="showExportText" translate>SETTINGS.DATA.exportSuccess</p>
+      <p class="status" *ngIf="showImportText" translate>SETTINGS.DATA.importSuccess</p>
     </li>
   </ul>
 </div>

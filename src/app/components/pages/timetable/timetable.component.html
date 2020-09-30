@@ -26,9 +26,11 @@
         <div class="timetable-lesson" *ngFor="let lesson of getValues(currentWeek, day)" (contextmenu)="openContextMenu($event.target, lesson, currentWeek, day)">
           <p class="timetable-lesson-name">{{lesson['lesson_name']}}</p>
           <p class="timetable-time">{{lesson['start_time']}} - {{lesson['finish_time']}}</p>
-          <p class="timetable-info" *ngIf="lesson['class_room'].length !== 0 && lesson['teacher_name'].length === 0"><span>{{lesson['class_room']}}</span></p>
+          <p class="timetable-info" *ngIf="lesson['class_room'].length !== 0 && lesson['teacher_name'].length === 0 && lesson['class_room'].startsWith('http')"><span class="is-link" (click)="openLink(lesson['class_room'])">Link</span></p>
+          <p class="timetable-info" *ngIf="lesson['class_room'].length !== 0 && lesson['teacher_name'].length === 0 && !(lesson['class_room'].startsWith('http'))"><span>{{lesson['class_room']}}</span></p>
           <p class="timetable-info" *ngIf="lesson['class_room'].length === 0 && lesson['teacher_name'].length !== 0">{{lesson['teacher_name']}}</p>
-          <p class="timetable-info" *ngIf="lesson['class_room'].length !== 0 && lesson['teacher_name'].length !== 0"><span>{{lesson['class_room']}}</span>, {{lesson['teacher_name']}}</p>
+          <p class="timetable-info" *ngIf="lesson['class_room'].length !== 0 && lesson['teacher_name'].length !== 0 && lesson['class_room'].startsWith('http')"><span class="is-link" (click)="openLink(lesson['class_room'])">Link</span>, {{lesson['teacher_name']}}</p>
+          <p class="timetable-info" *ngIf="lesson['class_room'].length !== 0 && lesson['teacher_name'].length !== 0 && !(lesson['class_room'].startsWith('http'))"><span>{{lesson['class_room']}}</span>, {{lesson['teacher_name']}}</p>
         </div>
       </div>
     </div>
