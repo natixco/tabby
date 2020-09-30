@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '@services/data/data.service';
 import { LessonService } from '@services/lesson/lesson.service';
 import { TranslateService } from '@ngx-translate/core';
+import { shell } from 'electron';
 
 @Component({
   selector: 'app-timetable',
@@ -111,5 +112,9 @@ export class TimetableComponent implements OnInit {
       this.menu.style.display = 'none';
       this._LessonService.deleteLesson(this.currentLesson['lesson'],this.currentLesson['week'],this.currentLesson['day'])
     }
+  }
+
+  openLink(link: string) {
+    shell.openExternal(link);
   }
 }
