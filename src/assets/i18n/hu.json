@@ -23,6 +23,14 @@
       "theme": "Téma",
       "darkMode": "Sötét mód",
       "mainColor": "Szín"
+    },
+    "DATA": {
+      "data": "Adat",
+      "error": "Hiba történt!",
+      "exportSuccess": "Sikeres exportálás!",
+      "importSuccess": "Sikeres importálás!",
+      "export": "Exportálás",
+      "import": "Importálás"
     }
   },
   "TIMETABLE": {
