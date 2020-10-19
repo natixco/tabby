@@ -9,7 +9,7 @@
     "editTask": "Modifica attività"
   },
   "SUBTITLE": {
-    "timetable": "Here you can see your weekly schedule. Fai tasto destro sulle lezioni per modificarle e eliminarle.",
+    "timetable": "Qui puoi vedere il tuo orario settimanale. Fai tasto destro sulle lezioni per modificarle e eliminarle.",
     "tasks": "Qui puoi vedere le tue attività. Per elimare un'attività tieni premuto il pulsante elimina.",
     "settings": "Qui puoi cambiare le tue impostazioni. Verranno salvate automaticamente.",
     "newLesson": "Imposta i dettagli della lezione, poi salvala.",
