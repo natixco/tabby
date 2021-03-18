@@ -173,7 +173,7 @@
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "app",
-      "styleext": "sass"
+      "style": "sass"
     },
     "@schematics/angular:directive": {
       "prefix": "app"

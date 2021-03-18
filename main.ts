@@ -16,6 +16,7 @@ function createWindow(): void {
     minHeight: 720,
     webPreferences: {
       nodeIntegration: true,
+      enableRemoteModule: true,
       allowRunningInsecureContent: (serve) ? true : false,
     },
   });
@@ -29,6 +30,7 @@ function createWindow(): void {
       electron: require(`${__dirname}/node_modules/electron`)
     });
     win.loadURL('http://localhost:4200');
+    win.webContents.openDevTools();
   } else {
     win.loadURL(url.format({
       pathname: path.join(__dirname, 'dist/index.html'),
@@ -68,3 +70,7 @@ ipcMain.on('import', async (event, arg) => {
   });
   event.reply('import-reply', result);
 });
+
+ipcMain.on('getUserDataPath', async (event, _) => {
+  event.reply('_getUserDataPath', app.getPath('userData'));
+})

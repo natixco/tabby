@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { readFile, writeFile, existsSync, copyFile } from 'fs';
-import { remote } from 'electron';
+import { ipcRenderer } from 'electron';
 import { BehaviorSubject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { Theme, light, dark } from '../../../assets/themes';
@@ -10,8 +10,9 @@ import { Theme, light, dark } from '../../../assets/themes';
 })
 export class DataService {
 
-  app: any = remote.app;
-  sysPref: any = remote.systemPreferences;
+  // app: any = null;
+  // sysPref: any = remote.systemPreferences;
+  userDataPath: string;
 
   _isDataLoaded: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
@@ -35,6 +36,12 @@ export class DataService {
   constructor(
     private _TranslateService: TranslateService
   ) {
+
+    ipcRenderer.once('_getUserDataPath', (_, args) => {
+      this.userDataPath = args;
+      this.readData();
+    })
+
     this._accentColor.subscribe((color: string) => {
       document.documentElement.style.setProperty("--color-accent", color);
 
@@ -87,6 +94,10 @@ export class DataService {
     });
   }
 
+  setPath(): void {
+    ipcRenderer.send('getUserDataPath');
+  }
+
   async readData() {
     await this._readData()
       .then((res: string) => {
@@ -106,7 +117,7 @@ export class DataService {
     return new Promise((resolve, reject) => {
       this.isFileExist();
 
-      readFile(this.app.getPath('userData') + '/data.json', "utf-8", (err, data2) => {
+      readFile(this.userDataPath + '/data.json', "utf-8", (err, data2) => {
         if(err) return reject(err);
         if(data2.length === 0) {
           this.writeDefaultData();
@@ -119,7 +130,7 @@ export class DataService {
   }
 
   isFileExist() {
-    if(!existsSync(this.app.getPath('userData') + '/data.json')) {
+    if(!existsSync(this.userDataPath + '/data.json')) {
       this.writeDefaultData();
     }
   }
@@ -133,7 +144,7 @@ export class DataService {
       "weeks": {},
       "tasks": []
     }
-    writeFile(this.app.getPath('userData') + '/data.json', JSON.stringify(defaultData), (err) => {
+    writeFile(this.userDataPath + '/data.json', JSON.stringify(defaultData), (err) => {
       if(err !== null) console.log(err);
     });
   }
@@ -143,7 +154,7 @@ export class DataService {
       this.data['currentWeek'] = '';
       this._data.next(this.data);
     }
-    writeFile(this.app.getPath('userData') + '/data.json', JSON.stringify(this.data), (err) => {
+    writeFile(this.userDataPath + '/data.json', JSON.stringify(this.data), (err) => {
       if(err !== null) console.log(err);
     });
   }
@@ -159,12 +170,12 @@ export class DataService {
     return new Promise(async (resolve, reject) => {
       await copyFile(fromPath, outputPath, (err) => {
         if (err) reject();
-        resolve();
+        resolve(true);
       });
     })
   }
 
   getDataPath(): string {
-    return this.app.getPath('userData') + '/data.json';
+    return this.userDataPath + '/data.json';
   }
 }
