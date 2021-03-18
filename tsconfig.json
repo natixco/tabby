@@ -1,6 +1,7 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
+    "module": "es2020",
     "baseUrl": "src",
     "paths": {
       "@services/*": ["app/services/*"],
@@ -22,9 +23,12 @@
       "dom"
     ]
   },
+  "files": [
+    "src/main.ts",
+    "src/polyfills.ts"
+  ],
   "include": [
-    "main.ts",
-    "src/**/*"
+    "src/**/*.d.ts"
   ],
   "exclude": [
     "node_modules"
