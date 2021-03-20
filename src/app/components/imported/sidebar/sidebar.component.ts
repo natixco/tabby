@@ -12,22 +12,22 @@ export class SidebarComponent implements OnInit {
     public _Router: Router
   ) { }
 
-  ngOnInit() {
-    this.moveActiveLinkBar();
+  ngOnInit(): void {
+    // this.moveActiveLinkBar();
   }
 
-  moveActiveLinkBar() {
-    var bar: HTMLElement = document.querySelector('.sidebar').querySelector('.menu').querySelector('.bar');
+  // moveActiveLinkBar() {
+  //   var bar: HTMLElement = document.querySelector('.sidebar').querySelector('.menu').querySelector('.bar');
 
-    var menu: HTMLElement = document.querySelector('.sidebar').querySelector('.menu');
-    var menuItems: NodeListOf<HTMLLIElement> = menu.querySelectorAll('li');
+  //   var menu: HTMLElement = document.querySelector('.sidebar').querySelector('.menu');
+  //   var menuItems: NodeListOf<HTMLLIElement> = menu.querySelectorAll('li');
 
-    menuItems.forEach(elem => {
-      elem.addEventListener('click', () => {
-        let elemPos = elem.offsetTop;
-        bar.style.top = `${elemPos + 12.5}px`;
-      });
-    });
-  }
+  //   menuItems.forEach(elem => {
+  //     elem.addEventListener('click', () => {
+  //       let elemPos = elem.offsetTop;
+  //       bar.style.top = `${elemPos + 12.5}px`;
+  //     });
+  //   });
+  // }
 
 }

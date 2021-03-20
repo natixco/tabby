@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { DataService } from '@services/data/data.service';
 import { Router } from '@angular/router';
-import { ipcRenderer } from 'electron';
 
 @Component({
   selector: 'app-root',
@@ -21,24 +20,8 @@ export class AppComponent {
     _TranslateService.setDefaultLang('en');
   }
 
-  async ngOnInit() {
-    // while (true) {
-    //   console.log(this._DataService.userDataPath)
-    //   if (this._DataService.userDataPath) break;
-    // }
-    // await this._DataService.readData();
-    // console.log(this._DataService.data);
+  ngOnInit() {
+    this._Router.navigate(['/timetable']);
   }
-
-  // async getUserDataPath(): Promise<string> {
-  //   return new Promise((resolve, reject) => {
-  //     ipcRenderer.send('getUserDataPath');
-
-  //     ipcRenderer.once('_getUserDataPath', (event, args) => {
-  //       console.log(args);
-  //       resolve(args);
-  //     })
-  //   })
-  // }
 
 }

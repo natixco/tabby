@@ -1,42 +1,55 @@
 @font-face
-  font-family: 'Avenir'
-  src: url('./assets/font/AvenirLTStd-Book.otf') format('opentype')
+  font-family: 'Inter'
+  font-weight: 700
+  src: url('./assets/font/Inter-Bold.ttf') format('truetype')
 
 @font-face
-  font-family: 'Avenir-Bold'
-  src: url('./assets/font/AvenirNextLTPro-Bold.otf') format('opentype')
+  font-family: 'Inter'
+  font-weight: 400
+  src: url('./assets/font/Inter-Regular.ttf') format('truetype')
 
 @font-face
-  font-family: 'Lato'
-  src: url('./assets/font/Lato-Regular.ttf') format('truetype')
-  unicode-range: U+0370-03FF
-
-@font-face
-  font-family: 'Lato-Bold'
-  src: url('./assets/font/Lato-Black.ttf') format('truetype')
-  unicode-range: U+0370-03FF
+  font-family: 'Inter'
+  font-weight: 100
+  src: url('./assets/font/Inter-Light.ttf') format('truetype')
 
 @function color($color-name)
   @return var(--color-#{$color-name})
 
+$accent: #1F78FE
+$accent-light: rgba($accent, .1)
+$danger: #FE4A49
+$danger-light: rgba($danger, .1)
+$text-one: #383E53
+$text-two: #727B96
+
 :root
-  --color-bg-one: #FFFFFF
-  --color-bg-two: #f9f9f9
-  --color-bg-three: #C6C6C6
-  --color-bg-card: #FFFFFF,
-  --color-text-one: 56, 62, 83, 1       //#383E53
-  --color-text-two: 114, 123, 150, 1    //#727B96
-  --color-accent: #0366FC
-  --color-accent-rgb: 3,102,252
-  --color-card-shadow-rgb: 114, 123, 150
-  --color-blackwhite: 0,0,0
+  --clr-accent: #{$accent}
+  --clr-accent-light: #{$accent-light}
+  --clr-danger: #{$danger}
+  --clr-text-one: #{$text-one}
+  --clr-text-two: #{$text-two}
+
+  // --color-bg-one: #FFFFFF
+  // --color-bg-two: #f9f9f9
+  // --color-bg-three: #C6C6C6
+  // --color-bg-card: #FFFFFF,
+  // --color-text-one: 56, 62, 83, 1       //#383E53
+  // --color-text-two: 114, 123, 150, 1    //#727B96
+  // --color-accent: #0366FC
+  // --color-accent-rgb: 3,102,252
+  // --color-card-shadow-rgb: 114, 123, 150
+  // --color-blackwhite: 0,0,0
 
 *
   margin: 0
   padding: 0
-  font-family: 'Lato', 'Avenir', sans-serif
   user-select: none
+  box-sizing: border-box
   transition: all .4 ease
+  outline: none
+  border: none
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 
 body
   background: color(bg-one)
@@ -55,7 +68,7 @@ body
     margin-left: 50px
 
   .title, span
-    font-family: 'Lato-Bold', 'Avenir-Bold', sans-serif
+    font-weight: 800
     font-size: 30px
     color: rgba(color(text-one))
     margin-bottom: 5px
