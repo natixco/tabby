@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LessonService } from '@services/lesson/lesson.service';
+import { Dispatch } from '@ngxs-labs/dispatch-decorator';
+import { SaveLesson } from '@state/timetable/timetable.actions';
 
 @Component({
   selector: 'app-new-lesson',
@@ -14,7 +15,6 @@ export class NewLessonComponent implements OnInit {
   weeks: string[];
 
   constructor(
-    private _LessonService: LessonService,
     private _Router: Router
   ) {
     this.lessonForm = new FormGroup({
@@ -28,17 +28,19 @@ export class NewLessonComponent implements OnInit {
     })
   }
 
-  get form() {
-    return this.lessonForm.controls;
-  }
-
-  ngOnInit() {
+  ngOnInit(): void {
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     this.weeks = alphabet;
   }
 
+  get form() {
+    return this.lessonForm.controls;
+  }
+
+  @Dispatch() storeSaveLesson = (lesson: any) => new SaveLesson(lesson);
+
   saveLesson() {
-    this._LessonService.saveLesson(this.lessonForm.value);
+    this.storeSaveLesson(this.lessonForm.value);
     this._Router.navigate(['/timetable']);
   }
 

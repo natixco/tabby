@@ -1,7 +1,11 @@
 import { Component, OnInit, ChangeDetectorRef  } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Select } from '@ngxs/store';
 import { DataService } from '@services/data/data.service';
 import { ipcRenderer } from 'electron';
+import { Observable } from 'rxjs';
+import { Dispatch } from '@ngxs-labs/dispatch-decorator';
+import { SetCurrentWeek, SetLanguage, SetDarkMode } from '@state/settings/settings.actions';
 
 @Component({
   selector: 'app-settings',
@@ -10,23 +14,31 @@ import { ipcRenderer } from 'electron';
 })
 export class SettingsComponent implements OnInit {
 
-  darkMode: boolean = true;
-  accentColor: string;
-  weeks: string[];
   objKeys = Object.keys;
-  currentWeek: string;
   showErrorText: boolean;
   showExportText: boolean;
   showImportText: boolean;
+
+  @Select(state => Object.keys(state.timetable.weeks)) weeks$: Observable<string[]>;
+  @Select(state => state.settings.currentWeek) currentWeek$: Observable<string>;
+  @Select(state => state.settings.isDarkMode) isDarkMode$: Observable<boolean>;
+  isDarkMode: boolean;
 
   constructor(
     private _TranslateService: TranslateService,
     public _DataService: DataService,
     private ref: ChangeDetectorRef
   ) {
+    this.isDarkMode$.subscribe(res => { this.isDarkMode = res; });
     ipcRenderer.on('export-reply', (_, arg: object) => this._export(_, arg))
     ipcRenderer.on('import-reply', (_, arg: object) => this._import(_, arg))
   }
+
+  ngOnInit(): void { }
+
+  @Dispatch() setCurrentWeek = async (currentWeek: string) => new SetCurrentWeek(currentWeek);
+  @Dispatch() setLanguage = async (language: string) => new SetLanguage(language);
+  @Dispatch() setDarkMode = async (isDarkMode: boolean) => new SetDarkMode(isDarkMode);
 
   async _export(_, arg: object) {
     if(!arg) return;
@@ -67,44 +79,19 @@ export class SettingsComponent implements OnInit {
     this._DataService.readData();
   }
 
-  ngOnInit() {
-    this._DataService._accentColor.subscribe((color: string) => {
-      this.accentColor = color;
-    });
-
-    this._DataService._darkMode.subscribe((res: boolean) => {
-      this.darkMode = res;
-    });
-
-    this._DataService._currentWeek.subscribe((res: string) => {
-      this.currentWeek = res;
-    });
-
-    this.weeks = Object.keys(this._DataService.data['weeks']);
+  async changeLanguage(lang: string) {
+    await this.setLanguage(lang);
+    this._DataService.saveData();
   }
 
-  changeLanguage(lang: string) {
-    this._DataService.changeData("language", lang);
-    this._DataService._language.next(lang);
+  async changeTheme() {
+    await this.setDarkMode(!this.isDarkMode);
+    this._DataService.saveData();
   }
 
-  changeAccentColor(color: string) {
-    this._DataService.changeData("accentColor", color);
-    this._DataService._accentColor.next(color);
-  }
-
-  changeTheme() {
-    this._DataService.changeData("darkMode", !this.darkMode);
-    this._DataService._darkMode.next(!this.darkMode);
-  }
-
-  changeCurrentWeek(week: string) {
-    this._DataService.changeData("currentWeek", week);
-    this._DataService._currentWeek.next(week);
-  }
-
-  getProperty(): string {
-    return document.documentElement.style.getPropertyValue("--color-accent");
+  async changeCurrentWeek(week: string) {
+    await this.setCurrentWeek(week);
+    this._DataService.saveData();
   }
 
   getCurrentLang(): string {

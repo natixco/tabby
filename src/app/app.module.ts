@@ -8,6 +8,10 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { NgxsModule } from '@ngxs/store';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { NgxsDispatchPluginModule } from '@ngxs-labs/dispatch-decorator';
+
 // NG Translate
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -23,6 +27,9 @@ import { HoldDeleteDirective } from './directives/hold-delete.directive';
 import { NewTaskComponent } from './components/pages/new-task/new-task.component';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { EditTaskComponent } from './components/pages/edit-task/edit-task.component';
+import { AppConfig } from '../environments/environment';
+import { TimetableState } from '@state/timetable/timetable.state';
+import { SettingsState } from '@state/settings/settings.state';
 
 @NgModule({
   declarations: [AppComponent, SidebarComponent, SettingsComponent, TimetableComponent, TasksComponent, NewLessonComponent, EditLessonComponent, HoldDeleteDirective, NewTaskComponent, SafeHtmlPipe, EditTaskComponent],
@@ -37,7 +44,13 @@ import { EditTaskComponent } from './components/pages/edit-task/edit-task.compon
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    NgxsModule.forRoot([
+      TimetableState,
+      SettingsState
+    ]),
+    AppConfig.production ? [] : NgxsLoggerPluginModule.forRoot(),
+    NgxsDispatchPluginModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

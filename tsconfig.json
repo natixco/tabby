@@ -5,6 +5,7 @@
     "baseUrl": "src",
     "paths": {
       "@services/*": ["app/services/*"],
+      "@state/*": ["app/state/*"],
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

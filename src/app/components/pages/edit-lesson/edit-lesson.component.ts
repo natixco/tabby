@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Dispatch } from '@ngxs-labs/dispatch-decorator';
+import { Select } from '@ngxs/store';
 import { DataService } from '@services/data/data.service';
-import { LessonService } from '@services/lesson/lesson.service';
+import { EditLesson } from '@state/timetable/timetable.actions';
+import { TimetableState } from '@state/timetable/timetable.state';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-edit-lesson',
@@ -16,11 +20,14 @@ export class EditLessonComponent implements OnInit {
 
   currentLesson: object;
 
+  @Select(state => state.timetable.lessonEdit) lessonEdit$: Observable<TimetableState>;
+  lessonEdit: any;
+
   constructor(
     private _DataService: DataService,
-    private _LessonService: LessonService,
     private _Router: Router
   ) {
+    this.lessonEdit$.subscribe(res => { this.lessonEdit = res; });
     this.lessonForm = new FormGroup({
       start_time: new FormControl('',Validators.required),
       finish_time: new FormControl('',Validators.required),
@@ -32,25 +39,27 @@ export class EditLessonComponent implements OnInit {
     })
   }
 
+  ngOnInit(): void {
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    this.weeks = alphabet;
+
+    this.lessonForm.controls.start_time.setValue(this.lessonEdit['lesson']['start_time']);
+    this.lessonForm.controls.finish_time.setValue(this.lessonEdit['lesson']['finish_time']);
+    this.lessonForm.controls.lesson_name.setValue(this.lessonEdit['lesson']['lesson_name']);
+    this.lessonForm.controls.teacher_name.setValue(this.lessonEdit['lesson']['teacher_name']);
+    this.lessonForm.controls.class_room.setValue(this.lessonEdit['lesson']['class_room']);
+    this.lessonForm.controls.week.setValue(this.lessonEdit['week']);
+    this.lessonForm.controls.day.setValue(this.lessonEdit['day']);
+  }
+
+  @Dispatch() editLesson = (originalLesson: any, modifiedLesson: any) => new EditLesson(originalLesson, modifiedLesson);
+
   get form() {
     return this.lessonForm.controls;
   }
 
-  ngOnInit() {
-    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-    this.weeks = alphabet;
-
-    this.lessonForm.controls.start_time.setValue(this._DataService.currentLesson['lesson']['start_time']);
-    this.lessonForm.controls.finish_time.setValue(this._DataService.currentLesson['lesson']['finish_time']);
-    this.lessonForm.controls.lesson_name.setValue(this._DataService.currentLesson['lesson']['lesson_name']);
-    this.lessonForm.controls.teacher_name.setValue(this._DataService.currentLesson['lesson']['teacher_name']);
-    this.lessonForm.controls.class_room.setValue(this._DataService.currentLesson['lesson']['class_room']);
-    this.lessonForm.controls.week.setValue(this._DataService.currentLesson['week']);
-    this.lessonForm.controls.day.setValue(this._DataService.currentLesson['day']);
-  }
-
   saveLesson() {
-    this._LessonService.editLesson(this._DataService.currentLesson, this.lessonForm.value);
+    this.editLesson(this.lessonEdit, this.lessonForm.value);
     this._Router.navigate(['/timetable']);
   }
 

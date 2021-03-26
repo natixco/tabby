@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '@services/data/data.service';
-import { LessonService } from '@services/lesson/lesson.service';
 import { TranslateService } from '@ngx-translate/core';
 import { shell } from 'electron';
+import { TimetableState } from '@state/timetable/timetable.state';
+import { Observable } from 'rxjs';
+import { Select } from '@ngxs/store';
+import { Dispatch } from '@ngxs-labs/dispatch-decorator';
+import { DeleteLesson, SetLessonEdit } from '@state/timetable/timetable.actions';
 
 @Component({
   selector: 'app-timetable',
@@ -13,33 +17,32 @@ export class TimetableComponent implements OnInit {
 
   objKeys = Object.keys;
   objValues = Object.values;
-  isDataLoaded: boolean;
-
-  currentWeek: string;
 
   pageX: number;
   pageY: number;
 
   menu: HTMLElement;
 
+  @Select(state => state.timetable.weeks) weeks$: Observable<TimetableState>;
+  weeks: any;
+  @Select(state => state.settings.currentWeek) currentWeek$: Observable<string>;
+  currentWeek: string;
+
   constructor(
     public _DataService: DataService,
     private _TranslateService: TranslateService,
-    private _LessonService: LessonService
   ) {
-    this._DataService._isDataLoaded.subscribe((res: boolean) => {
-      this.isDataLoaded = res;
-    });
-
-    this._DataService._currentWeek.subscribe((res: string) => {
-      this.currentWeek = res;
-    });
+    this.weeks$.subscribe(res => { this.weeks = res; });
+    this.currentWeek$.subscribe(res => { this.currentWeek = res; });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.dragSlider();
     this.menu = document.querySelector('.contextmenu');
   }
+
+  @Dispatch() setLessonEdit = (lesson: any) => new SetLessonEdit(lesson);
+  @Dispatch() deleteLesson = (lesson: any, week: string, day: string) => new DeleteLesson(lesson, week, day);
 
   getToday(): string {
     return ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'][new Date().getDay()];
@@ -50,7 +53,7 @@ export class TimetableComponent implements OnInit {
   }
 
   getValues(week: string, day: string) {
-    return Object.values(this._DataService.data['weeks'][week][day]);
+    return this.weeks[week][day];
   }
 
   dragSlider() {
@@ -99,7 +102,7 @@ export class TimetableComponent implements OnInit {
     this.menu.style.display = 'block';
 
     this.currentLesson = {lesson,week,day};
-    this._DataService._currentLesson.next(this.currentLesson);
+    this.setLessonEdit(this.currentLesson);
   }
 
   deleteProgress: number = 0;
@@ -110,7 +113,7 @@ export class TimetableComponent implements OnInit {
     if(this.deleteProgress > 100) {
       this.deleteProgress = 0;
       this.menu.style.display = 'none';
-      this._LessonService.deleteLesson(this.currentLesson['lesson'],this.currentLesson['week'],this.currentLesson['day'])
+      this.deleteLesson(this.currentLesson['lesson'],this.currentLesson['week'],this.currentLesson['day'])
     }
   }
 
