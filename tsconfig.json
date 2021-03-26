@@ -6,6 +6,10 @@
     "paths": {
       "@services/*": ["app/services/*"],
       "@state/*": ["app/state/*"],
+      "@components/*": ["app/components/*"],
+      "@views/*": ["app/views/*"],
+      "@pipes/*": ["app/pipes/*"],
+      "@directives/*": ["app/directives/*"],
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
