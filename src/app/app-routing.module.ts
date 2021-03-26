@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TimetableComponent } from './components/pages/timetable/timetable.component';
-import { SettingsComponent } from './components/pages/settings/settings.component';
-import { TasksComponent } from './components/pages/tasks/tasks.component';
-import { NewLessonComponent } from './components/pages/new-lesson/new-lesson.component';
-import { EditLessonComponent } from './components/pages/edit-lesson/edit-lesson.component';
-import { NewTaskComponent } from './components/pages/new-task/new-task.component';
-import { EditTaskComponent } from './components/pages/edit-task/edit-task.component';
+import { TimetableComponent } from '@views/timetable/timetable.component';
+import { SettingsComponent } from '@views/settings/settings.component';
+import { TasksComponent } from '@views/tasks/tasks.component';
+import { NewLessonComponent } from '@views/new-lesson/new-lesson.component';
+import { EditLessonComponent } from '@views/edit-lesson/edit-lesson.component';
+import { NewTaskComponent } from '@views/new-task/new-task.component';
+import { EditTaskComponent } from '@views/edit-task/edit-task.component';
 
 const routes: Routes = [
   {

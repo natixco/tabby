@@ -52,7 +52,7 @@ $text-two: #727B96
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 
 body
-  background: color(bg-one)
+  background: #fff
   overflow-x: hidden
 
 .header
@@ -70,13 +70,13 @@ body
   .title, span
     font-weight: 800
     font-size: 30px
-    color: rgba(color(text-one))
+    color: var(--clr-text-one)
     margin-bottom: 5px
 
   .subtitle
     font-weight: 400
     font-size: 16px
-    color: rgba(color(text-two))
+    color: var(--clr-text-two)
 
   button
     margin-left: 50px
@@ -93,14 +93,14 @@ body
     border: 0
     &:hover
       i
-        background: rgba(color(accent-rgb), .2)
+        background: var(--clr-accent)
 
     i
       padding: 15px
       border-radius: 50%
-      background: rgba(color(accent-rgb), .1)
+      background: var(--clr-accent-light)
       font-size: 26px
-      color: color(accent)
+      color: var(--clr-accent)
       transition: all .2s ease
 
 // BUTTON
@@ -123,24 +123,24 @@ body
 
 .btn-primary--accent
   color: white
-  background: color(accent)
+  background: var(--clr-accent)
   &:hover, &:focus
-    background: color(accent-hover)
+    background: var(--clr-accent)
 
 .btn-secondary--accent
-  color: rgba(color(text-one))
-  border: 1px solid rgba(color(blackwhite),.1)
+  color: var(--clr-text-one)
+  border: 1px solid rgba(0,0,0,.1)
   background: transparent
   &:hover, &:focus
-    background: color(accent)
-    border-color: color(accent)
+    background: var(--clr-accent)
+    border-color: var(--clr-accent)
     color: white
 
 .btn-disabled
-  background: rgba(color(accent-rgb), .5)
+  opacity: 0.5
   cursor: not-allowed
   &:hover, &:focus
-    background: rgba(color(accent-rgb), .5)
+    // background: rgba(color(accent-rgb), .5)
 
 // INPUT
 .input-container
@@ -150,10 +150,10 @@ body
   flex-direction: column
   &:focus-within
     label
-      color: color(accent)
+      color: var(--clr-accent)
 
   input, select, textarea
-    color: rgba(color(text-one))
+    color: var(--clr-text-one)
     border-radius: 4px
     width: 335px
     height: 45px
@@ -162,15 +162,15 @@ body
     font-weight: 400
     font-size: 16px
     background: transparent
-    border: 1px solid rgba(color(blackwhite),.1)
+    border: 1px solid rgba(0,0,0,.1)
     transition: all .4s ease
     outline: 0
     &:hover
-      border-color: rgba(color(blackwhite),.2)
+      border-color: rgba(0,0,0,.2)
     &:focus
-      border-color: color(accent)
+      border-color: var(--clr-accent)
     &:focus ~ label
-      color: color(accent)
+      color: var(--clr-accent)
 
   input[type="time"]
     text-align: right
@@ -180,7 +180,7 @@ body
     width: 350px
 
     option
-      background: color(bg-two)
+      background: #f9f9f9
 
   label
     pointer-events: none
@@ -191,7 +191,7 @@ body
     font-size: 15px
     margin-bottom: 10px
     display: inline-block
-    color: rgba(color(text-one))
+    color: var(--clr-text-one)
 
   .input-invalid
     color: #fa5e62
@@ -214,7 +214,7 @@ body
     opacity: 0
     cursor: pointer
     &:checked ~ .custom-checkbox
-      background: color(accent)
+      background: var(--clr-accent)
 
       i
         opacity: 1
@@ -243,7 +243,7 @@ body
   height: 10px
 
 ::-webkit-scrollbar-track
-  background: color(bg-two)
+  background: #f9f9f9
 
 ::-webkit-scrollbar-thumb
-  background: color(bg-three)
+  background: #c6c6c6

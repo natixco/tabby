@@ -1,5 +1,3 @@
-@import '../../../../assets/_import.sass'
-
 .container-clear
   display: flex
   flex-direction: column
@@ -14,13 +12,13 @@
     h1
       font-size: 34px
       font-weight: 700
-      color: rgba(color(text-one))
+      color: var(--clr-text-one)
       margin-bottom: 10px
 
     h2
       font-size: 18px
       font-weight: 400
-      color: rgba(color(text-two))
+      color: var(--clr-text-two)
 
 .container
   position: absolute
@@ -33,7 +31,7 @@
     list-style: none
     width: 100%
     height: auto
-    border-bottom: 1px solid rgba(color(blackwhite),.1)
+    border-bottom: 1px solid rgba(0,0,0,.1)
     overflow: hidden
 
     .task-description
@@ -42,7 +40,7 @@
       padding: 0 45px
 
       p
-        color: rgba(color(text-two))
+        color: var(--clr-text-two)
         font-size: 16px
         padding-bottom: 15px
 
@@ -86,7 +84,7 @@
             text-overflow: ellipsis
             white-space: nowrap
             overflow: hidden
-            color: rgba(color(text-one))
+            color: var(--clr-text-one)
             margin-left: 0px
 
         .checked
@@ -97,7 +95,7 @@
           width: 30px
           height: 30px
           border-radius: 50%
-          border: 1px solid rgba(color(blackwhite),.1)
+          border: 1px solid rgba(0,0,0,.1)
 
           input
             position: absolute
@@ -109,7 +107,7 @@
             opacity: 0
             cursor: pointer
             &:checked ~ .task-custom-checkbox
-              background: color(accent)
+              background: var(--clr-accent)
 
               i
                 opacity: 1
@@ -156,7 +154,7 @@
           i
             opacity: .5
             font-size: 20px
-            color: rgba(color(text-two))
+            color: var(--clr-text-two)
             transition: all .2s ease
 
           .deletebg
@@ -172,12 +170,12 @@
           &:hover
             i
               opacity: 1
-              color: color(accent)
+              color: var(--clr-accent)
 
           i
             opacity: .5
             font-size: 20px
-            color: rgba(color(text-two))
+            color: var(--clr-text-two)
             transition: all .2s ease
 
           .editbg
@@ -187,5 +185,5 @@
             width: 0
             height: 100%
             // background: rgba(#fa5e62,.1)
-            background: rgba(color(accent-rgb), .1)
+            background: rgba(0,0,0, .1)
             transition: all .1s ease
