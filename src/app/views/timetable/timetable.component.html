@@ -1,11 +1,10 @@
-<div class="header">
-  <div class="text">
-    <h1 class="title" *ngIf="currentWeek"><span translate>TITLE.timetable</span> - <span translate>NEWLESSON.NORMAL.week</span> {{currentWeek}}</h1>
-    <h1 class="title" *ngIf="!currentWeek"><span translate>TITLE.timetable</span></h1>
-    <h2 class="subtitle" translate>SUBTITLE.timetable</h2>
-  </div>
-  <button class="btn btn-primary--accent" routerLink="/new-lesson" translate>TITLE.newLesson</button>
-</div>
+<app-header
+  [title]="title"
+  [subtitle]="('SUBTITLE.timetable' | translate)"
+  btnLink="/new-lesson"
+  [btnText]="('TITLE.newLesson' | translate)"
+></app-header>
+
 <div class="timetable-container">
   <div class="timetable-inner-container timetable-clear" *ngIf="!weeks">
     <div class="loader"></div>

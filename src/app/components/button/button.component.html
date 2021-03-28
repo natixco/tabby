@@ -1,0 +1,15 @@
+<button
+  *ngIf="text"
+  class="btn-primary--accent"
+  [routerLink]="link ? link : null"
+>
+  {{ text }}
+</button>
+
+<button
+  *ngIf="icon"
+  class="btn-icon"
+  [routerLink]="link ? link : null"
+>
+  <i [class]="'eva ' + icon"></i>
+</button>

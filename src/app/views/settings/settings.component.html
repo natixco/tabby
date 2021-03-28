@@ -1,9 +1,8 @@
-<div class="header">
-  <div class="text">
-    <h1 class="title" translate>TITLE.settings</h1>
-    <h2 class="subtitle" translate>SUBTITLE.settings</h2>
-  </div>
-</div>
+<app-header
+  [title]="('TITLE.settings' | translate)"
+  [subtitle]="('SUBTITLE.settings' | translate)"
+></app-header>
+
 <div class="container">
   <ul>
     <li *ngIf="(weeks$ | async).length !== 0">

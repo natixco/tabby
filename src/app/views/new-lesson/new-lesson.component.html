@@ -1,12 +1,10 @@
-<div class="header">
-  <div class="text">
-    <h1 class="title" translate>TITLE.newLesson</h1>
-    <h2 class="subtitle" translate>SUBTITLE.newLesson</h2>
-  </div>
-  <div class="icon" routerLink="/">
-    <i class="eva eva-close-outline"></i>
-  </div>
-</div>
+<app-header
+  [title]="('TITLE.newLesson' | translate)"
+  [subtitle]="('SUBTITLE.newLesson' | translate)"
+  btnLink="/"
+  btnIcon="eva-close-outline"
+></app-header>
+
 <div class="container">
   <form [formGroup]="lessonForm">
     <ul>

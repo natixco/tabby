@@ -13,40 +13,11 @@
   font-weight: 100
   src: url('./assets/font/Inter-Light.ttf') format('truetype')
 
-@function color($color-name)
-  @return var(--color-#{$color-name})
-
-$accent: #1F78FE
-$accent-light: rgba($accent, .1)
-$danger: #FE4A49
-$danger-light: rgba($danger, .1)
-$text-one: #383E53
-$text-two: #727B96
-
-:root
-  --clr-accent: #{$accent}
-  --clr-accent-light: #{$accent-light}
-  --clr-danger: #{$danger}
-  --clr-text-one: #{$text-one}
-  --clr-text-two: #{$text-two}
-
-  // --color-bg-one: #FFFFFF
-  // --color-bg-two: #f9f9f9
-  // --color-bg-three: #C6C6C6
-  // --color-bg-card: #FFFFFF,
-  // --color-text-one: 56, 62, 83, 1       //#383E53
-  // --color-text-two: 114, 123, 150, 1    //#727B96
-  // --color-accent: #0366FC
-  // --color-accent-rgb: 3,102,252
-  // --color-card-shadow-rgb: 114, 123, 150
-  // --color-blackwhite: 0,0,0
-
 *
   margin: 0
   padding: 0
   user-select: none
   box-sizing: border-box
-  transition: all .4 ease
   outline: none
   border: none
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
@@ -55,195 +26,108 @@ body
   background: #fff
   overflow-x: hidden
 
-.header
-  position: relative
-  width: calc(100vw - 250px)
-  height: 120px
-  display: flex
-  flex-direction: row
-  align-items: center
-  justify-content: space-between
+// // INPUT
+// .input-container
+//   width: auto
+//   height: auto
+//   display: flex
+//   flex-direction: column
+//   &:focus-within
+//     label
+//       color: var(--clr-accent)
 
-  .text
-    margin-left: 50px
+//   input, select, textarea
+//     color: var(--clr-text-one)
+//     border-radius: 4px
+//     width: 335px
+//     height: 45px
+//     margin-bottom: 25px
+//     padding-left: 15px
+//     font-weight: 400
+//     font-size: 16px
+//     background: transparent
+//     border: 1px solid rgba(0,0,0,.1)
+//     transition: all .4s ease
+//     outline: 0
+//     &:hover
+//       border-color: rgba(0,0,0,.2)
+//     &:focus
+//       border-color: var(--clr-accent)
+//     &:focus ~ label
+//       color: var(--clr-accent)
 
-  .title, span
-    font-weight: 800
-    font-size: 30px
-    color: var(--clr-text-one)
-    margin-bottom: 5px
+//   input[type="time"]
+//     text-align: right
 
-  .subtitle
-    font-weight: 400
-    font-size: 16px
-    color: var(--clr-text-two)
+//   select
+//     cursor: pointer
+//     width: 350px
 
-  button
-    margin-left: 50px
-    margin-right: 50px
+//     option
+//       background: #f9f9f9
 
-  .icon
-    margin-right: 50px
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: center
-    cursor: pointer
-    outline: 0
-    border: 0
-    &:hover
-      i
-        background: var(--clr-accent)
+//   label
+//     pointer-events: none
+//     transition: all .4s ease
+//     position: relative
+//     // margin-left: 15px
+//     margin-right: 15px
+//     font-size: 15px
+//     margin-bottom: 10px
+//     display: inline-block
+//     color: var(--clr-text-one)
 
-    i
-      padding: 15px
-      border-radius: 50%
-      background: var(--clr-accent-light)
-      font-size: 26px
-      color: var(--clr-accent)
-      transition: all .2s ease
+//   .input-invalid
+//     color: #fa5e62
 
-// BUTTON
-.btn
-  height: 45px
-  padding: 0 30px
-  border-radius: 4px
-  cursor: pointer
-  font-size: 16px
-  font-weight: 400
-  background: transparent
-  text-align: center
-  overflow: visible
-  transition: all .2s ease
-  text-decoration: none
-  display: block
-  outline: none
-  border: none
-  white-space: nowrap
+// // CUSTOM CHECKBOX
+// .checkbox
+//   position: relative
+//   width: 30px
+//   height: 30px
+//   border-radius: 4px
+//   border: 1px solid rgba(0,0,0,.1)
 
-.btn-primary--accent
-  color: white
-  background: var(--clr-accent)
-  &:hover, &:focus
-    background: var(--clr-accent)
+//   input
+//     position: absolute
+//     top: 0
+//     left: 0
+//     width: 100%
+//     height: 100%
+//     z-index: 999
+//     opacity: 0
+//     cursor: pointer
+//     &:checked ~ .custom-checkbox
+//       background: var(--clr-accent)
 
-.btn-secondary--accent
-  color: var(--clr-text-one)
-  border: 1px solid rgba(0,0,0,.1)
-  background: transparent
-  &:hover, &:focus
-    background: var(--clr-accent)
-    border-color: var(--clr-accent)
-    color: white
+//       i
+//         opacity: 1
 
-.btn-disabled
-  opacity: 0.5
-  cursor: not-allowed
-  &:hover, &:focus
-    // background: rgba(color(accent-rgb), .5)
+//   .custom-checkbox
+//     position: absolute
+//     top: 0
+//     left: 0
+//     width: 100%
+//     height: 100%
+//     background: transparent
+//     border-radius: 4px
+//     display: flex
+//     flex-direction: column
+//     align-items: center
+//     justify-content: center
 
-// INPUT
-.input-container
-  width: auto
-  height: auto
-  display: flex
-  flex-direction: column
-  &:focus-within
-    label
-      color: var(--clr-accent)
-
-  input, select, textarea
-    color: var(--clr-text-one)
-    border-radius: 4px
-    width: 335px
-    height: 45px
-    margin-bottom: 25px
-    padding-left: 15px
-    font-weight: 400
-    font-size: 16px
-    background: transparent
-    border: 1px solid rgba(0,0,0,.1)
-    transition: all .4s ease
-    outline: 0
-    &:hover
-      border-color: rgba(0,0,0,.2)
-    &:focus
-      border-color: var(--clr-accent)
-    &:focus ~ label
-      color: var(--clr-accent)
-
-  input[type="time"]
-    text-align: right
-
-  select
-    cursor: pointer
-    width: 350px
-
-    option
-      background: #f9f9f9
-
-  label
-    pointer-events: none
-    transition: all .4s ease
-    position: relative
-    // margin-left: 15px
-    margin-right: 15px
-    font-size: 15px
-    margin-bottom: 10px
-    display: inline-block
-    color: var(--clr-text-one)
-
-  .input-invalid
-    color: #fa5e62
-
-// CUSTOM CHECKBOX
-.checkbox
-  position: relative
-  width: 30px
-  height: 30px
-  border-radius: 4px
-  border: 1px solid rgba(0,0,0,.1)
-
-  input
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    z-index: 999
-    opacity: 0
-    cursor: pointer
-    &:checked ~ .custom-checkbox
-      background: var(--clr-accent)
-
-      i
-        opacity: 1
-
-  .custom-checkbox
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    background: transparent
-    border-radius: 4px
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: center
-
-    i
-      opacity: 0
-      font-size: 18px
-      color: white
+//     i
+//       opacity: 0
+//       font-size: 18px
+//       color: white
 
 
-::-webkit-scrollbar
-  width: 10px
-  height: 10px
+// ::-webkit-scrollbar
+//   width: 10px
+//   height: 10px
 
-::-webkit-scrollbar-track
-  background: #f9f9f9
+// ::-webkit-scrollbar-track
+//   background: #f9f9f9
 
-::-webkit-scrollbar-thumb
-  background: #c6c6c6
+// ::-webkit-scrollbar-thumb
+//   background: #c6c6c6

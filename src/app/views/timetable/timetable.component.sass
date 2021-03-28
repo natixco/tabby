@@ -4,7 +4,7 @@
 .timetable-container
   position: absolute
   margin-top: 30px
-  width: calc(100vw - 250px)
+  width: 100%
   height: calc(100vh - 120px - 30px)
   overflow: scroll
   cursor: grab
@@ -40,8 +40,8 @@
       height: 44px
       border-radius: 50%
       border: 2px solid rgba(255,255,255,.2)
-      border-top-color: var(--clr-accent)
-      border-bottom-color: var(--clr-accent)
+      border-top-color: var(--clr-accent-n)
+      border-bottom-color: var(--clr-accent-n)
       animation: rotate 1s linear infinite
 
   .timetable-inner-container
@@ -54,7 +54,7 @@
     .timetable-week
       position: absolute
       top: 0
-      left: 50px
+      left: 0
       width: auto
       height: auto
       display: flex
@@ -93,7 +93,7 @@
             padding-left: 15px
             font-size: 20px
             font-weight: 700
-            color: var(--clr-accent)
+            color: var(--clr-accent-n)
             display: inline-block
             max-width: 250px
             word-wrap: break-word
@@ -126,7 +126,7 @@
             span.is-link
               cursor: pointer
               font-weight: 700
-              color: var(--clr-accent)
+              color: var(--clr-accent-n)
               text-decoration: none
 
 
@@ -161,7 +161,7 @@
           color: #fa5e62
       &:hover
         i,p
-          color: var(--clr-accent)
+          color: var(--clr-accent-n)
 
       i
         margin-left: 15px

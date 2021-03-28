@@ -1,12 +1,10 @@
-<div class="header">
-  <div class="text">
-    <h1 class="title" translate>TITLE.newTask</h1>
-    <h2 class="subtitle" translate>SUBTITLE.newTask</h2>
-  </div>
-  <div class="icon" routerLink="/tasks">
-    <i class="eva eva-close-outline"></i>
-  </div>
-</div>
+<app-header
+  [title]="('TITLE.newTask' | translate)"
+  [subtitle]="('SUBTITLE.newTask' | translate)"
+  btnLink="/"
+  btnIcon="eva-close-outline"
+></app-header>
+
 <div class="container">
   <form [formGroup]="lessonForm">
     <div class="input-container">

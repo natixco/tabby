@@ -15,6 +15,8 @@ import { DeleteLesson, SetLessonEdit } from '@state/timetable/timetable.actions'
 })
 export class TimetableComponent implements OnInit {
 
+  title: string;
+
   objKeys = Object.keys;
   objValues = Object.values;
 
@@ -33,16 +35,28 @@ export class TimetableComponent implements OnInit {
     private _TranslateService: TranslateService,
   ) {
     this.weeks$.subscribe(res => { this.weeks = res; });
-    this.currentWeek$.subscribe(res => { this.currentWeek = res; });
+    this.currentWeek$.subscribe(res => {
+      this.currentWeek = res;
+      this.setTitle();
+    });
   }
 
   ngOnInit(): void {
     this.dragSlider();
     this.menu = document.querySelector('.contextmenu');
+    this.setTitle();
   }
 
   @Dispatch() setLessonEdit = (lesson: any) => new SetLessonEdit(lesson);
   @Dispatch() deleteLesson = (lesson: any, week: string, day: string) => new DeleteLesson(lesson, week, day);
+
+  setTitle(): void {
+    let title = this._TranslateService.instant('TITLE.timetable');
+    if (this.currentWeek) {
+      title += ` - ${this._TranslateService.instant('NEWLESSON.NORMAL.week')} ${this.currentWeek}`;
+    }
+    this.title = title;
+  }
 
   getToday(): string {
     return ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'][new Date().getDay()];

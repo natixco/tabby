@@ -1,11 +1,11 @@
-<div class="header">
-  <div class="text">
-    <h1 class="title" translate>TITLE.tasks</h1>
-    <h2 class="subtitle" translate>SUBTITLE.tasks</h2>
-  </div>
-  <button class="btn btn-primary--accent" routerLink="/new-task" translate>TITLE.newTask</button>
-</div>
-<div class="container container-clear" *ngIf="_DataService.data['tasks'].length === 0">
+<app-header
+  [title]="('TITLE.tasks' | translate)"
+  [subtitle]="('SUBTITLE.tasks' | translate)"
+  btnLink="/new-task"
+  [btnText]="('TITLE.newTask' | translate)"
+></app-header>
+
+<!-- <div class="container container-clear" *ngIf="_DataService.data['tasks'].length === 0">
   <div class="text">
     <h1 class="title" translate>TASKS.title</h1>
     <h2 class="subtitle" translate>TASKS.subtitle</h2>
@@ -42,4 +42,4 @@
       </div>
     </li>
   </ul>
-</div>
+</div> -->

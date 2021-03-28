@@ -1,0 +1,8 @@
+<div class="header">
+  <div>
+    <h1>{{ title }}</h1>
+    <h2>{{ subtitle }}</h2>
+  </div>
+  <app-button *ngIf="btnLink && btnText" [link]="btnLink" [text]="btnText"></app-button>
+  <app-button *ngIf="btnLink && btnIcon" [link]="btnLink" [icon]="btnIcon"></app-button>
+</div>

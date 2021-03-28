@@ -32,9 +32,11 @@ import { HoldDeleteDirective } from '@directives/hold-delete.directive';
 import { SafeHtmlPipe } from '@pipes/safe-html.pipe';
 
 import { AppConfig } from '../environments/environment';
+import { ButtonComponent } from './components/button/button.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, SidebarComponent, SettingsComponent, TimetableComponent, TasksComponent, NewLessonComponent, EditLessonComponent, HoldDeleteDirective, NewTaskComponent, SafeHtmlPipe, EditTaskComponent],
+  declarations: [AppComponent, SidebarComponent, SettingsComponent, TimetableComponent, TasksComponent, NewLessonComponent, EditLessonComponent, HoldDeleteDirective, NewTaskComponent, SafeHtmlPipe, EditTaskComponent, ButtonComponent, HeaderComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,

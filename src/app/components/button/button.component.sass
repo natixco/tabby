@@ -1,0 +1,57 @@
+button
+  height: 40px
+  padding: 0 25px
+  border-radius: 4px
+  cursor: default
+  font-size: 14px
+  font-weight: 400
+  background: transparent
+  text-align: center
+  overflow: visible
+  transition: all .2s ease
+  outline: none
+  border: none
+  white-space: nowrap
+
+  &.btn-primary--accent
+    color: white
+    background: var(--clr-accent-n)
+    &:hover, &:focus
+      background: var(--clr-accent-d)
+
+  &.btn-secondary--accent
+    color: var(--clr-text-one)
+    border: 1px solid rgba(0,0,0,.1)
+    background: transparent
+    &:hover, &:focus
+      background: var(--clr-accent-n)
+      border-color: var(--clr-accent-n)
+      color: white
+
+.btn-disabled
+  opacity: 0.5
+  cursor: not-allowed
+  &:hover, &:focus
+    // background: rgba(color(accent-rgb), .5)
+
+
+
+.btn-icon
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  cursor: default
+  padding: 0
+  height: 40px
+  width: 40px
+  background: var(--clr-text-two-l)
+  &:hover
+    background: var(--clr-accent-l)
+    i
+      color: var(--clr-accent-n)
+
+  i
+    font-size: 28px
+    color: var(--clr-text-two)
+    transition: all .2s ease
